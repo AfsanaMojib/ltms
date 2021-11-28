@@ -3,11 +3,29 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plant;
 use Illuminate\Http\Request;
 
 class PlantnameController extends Controller
 {
-    public function plant(){
-        return view('admin.layouts.plant_name');
+    public function plantlist(){
+        $plant = Plant::all();
+        // dd($plant);
+        return view('admin.layouts.plantname_list',compact('plant'));
+    }
+    public function Plantname(){
+        return view('admin.layouts.Plantname_form');
+    }
+    public function store(Request $request){
+        plant::create([
+            'plant_name'=>$request->plant_name,
+            'plant_id'=>$request->plant_id,
+            'plant_type'=>$request->plant_type,
+            'plant_quantity'=>$request->plant_quantity,
+
+
+
+        ]);
+        return redirect()->back();
     }
 }

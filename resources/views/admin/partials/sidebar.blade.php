@@ -11,17 +11,17 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Admin
                             </a>
-                            <a class="nav-link" href="{{route('admin.user')}}">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 User
                             </a>
-                            <a class="nav-link" href="{{route('admin.Plantname')}}">
+                            <a class="nav-link" href="{{route('admin.plant.name')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
-                                Plant_Name
+                                Plant
                             </a>
-                            <a class="nav-link" href="{{route('admin.planting')}}">
+                            <a class="nav-link" href="{{route('admin.plantingtool')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
-                                Planting_Tool
+                                Planting Tool
                             </a>
 
                             
@@ -33,7 +33,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Picture
                             </a>
-                            <a class="nav-link" href="{{route('product.index')}}">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Pesticide
                             </a>
@@ -41,7 +41,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Payment
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Invoice
                             </a>
@@ -49,6 +49,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Report
                             </a>
+                           
                             
                             
                             <!-- <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">

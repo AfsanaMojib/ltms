@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlantingToolsTable extends Migration
+class CreateSoiltexturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePlantingToolsTable extends Migration
      */
     public function up()
     {
-        Schema::create('planting_tools', function (Blueprint $table) {
+        Schema::create('soiltextures', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('password');
+            $table->string('user_name');
+            $table->integer('user_phone_number');
+            $table->string('user_address');
+            $table->string('soil_type');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreatePlantingToolsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('planting_tools');
+        Schema::dropIfExists('soiltextures');
     }
 }

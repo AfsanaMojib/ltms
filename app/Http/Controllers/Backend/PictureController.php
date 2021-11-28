@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class PictureController extends Controller
 {
-    public function picture(){
+    public function picturelist()
+    {
         return view('admin.layouts.picture');
+    }
+    public function pictureform()
+    {
+        return view('admin.layouts.picture.form');
     }
 }

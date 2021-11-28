@@ -1,29 +1,28 @@
 @extends('admin.master')
 @section('main')
-<h1>Soil Texture</h1>
 
-  
-<a href="{{route('soiltexture.form')}}" class="btn btn-success">Choose Soil Type</a>
+<h1>Planting Tool List</h1>
+<a href="{{route('planting.form')}}" class="btn btn-success">Planting Tool</a>
+
 <table class="table">
   <thead>
     <tr>
       <th scope="col">User Name</th>
       <th scope="col">User Phone Number</th>
       <th scope="col">User Address</th>
-      <th scope="col">Soil Type</th>
+      <th scope="col">Planting Tool Type</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($soiltexture as $data)
-    
+    @foreach($plantingtool as $data)
     <tr>
       <th scope="row">{{$data->user_name}}</th>
       <td>{{$data->user_phone_number}}</td>
       <td>{{$data->user_address}}</td>
-      <td>{{$data->soil_type}}</td>
+      <td>{{$data->tool_type}}</td>
     </tr>
-  @endforeach
-    
+    @endforeach
   </tbody>
 </table>
+
 @endsection
