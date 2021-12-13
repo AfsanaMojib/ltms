@@ -11,6 +11,7 @@ use App\Http\controllers\Backend\PesticideController;
 use App\Http\Controllers\Backend\PlantnameController;
 use App\Http\Controllers\Backend\StockController;
 use App\Http\Controllers\Backend\LoginController;
+use App\Http\Controllers\Backend\PlanttypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,3 +83,8 @@ Route::post('/user/do/registration',[LoginController::class,'doregistration'])->
 Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
 Route::post('/user/do/login',[LoginController::class,'dologin'])->name('user.do.login');
 Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
+
+// Plant Type
+Route::get('/admin/planttype/list',[PlanttypeController::class,'plantT'])->name('admin.plant.type');
+Route::get('/admin/planttype/form',[PlanttypeController::class,'plantTform'])->name('planttype.form');
+Route::post('/planttype/store',[PlanttypeController::class,'store'])->name('planttype.store');

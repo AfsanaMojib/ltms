@@ -29,8 +29,13 @@
                             </a>
                             <a class="nav-link" href="{{route('admin.plant.name')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
-                                Plant
+                                Plant 
                             </a>
+                            <a class="nav-link" href="{{route('admin.plant.type')}}">
+                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
+                                Plant Type 
+                            </a>
+                           
                            
                             <a class="nav-link" href="{{route('admin.plantingtool')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
