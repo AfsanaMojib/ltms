@@ -16,7 +16,7 @@
       @foreach($plant as $data)
     <tr>
       <th scope="row">{{$data->plant_name}}</th>
-      <td>{{$data->phone_id}}</td>
+      <td>{{$data->plant_id}}</td>
       <td>{{$data->plant_type}}</td>
       <td>{{$data->plant_quantity}}</td>
     </tr>

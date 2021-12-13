@@ -6,19 +6,21 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">User Name</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Image</th>
+      <th scope="col">Image Type</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($pictures as $data)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$data->user_name}}</th>
+      <td>{{$data->user_id}}</td>
+      <td>{{$data->image}}</td>
+      <td ><img src= "{{url('/uploads/'.$data->image)}}" alt="picture image" width="100px"></td>
     </tr>
+    @endforeach
    
   </tbody>
 </table>

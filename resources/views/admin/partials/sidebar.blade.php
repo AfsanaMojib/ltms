@@ -7,10 +7,22 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="{{route('admin.adminpart')}}">
+                            @if(auth()->user())
+                            <a class="nav-link" href="{{route('user.logout')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
-                                Admin
+                                Logout
                             </a>
+                            @else
+                            <a class="nav-link" href="{{route('user.registration')}}">
+                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
+                                Registration
+                            </a>
+                            <a class="nav-link" href="{{route('user.login')}}">
+                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
+                                Log In
+                            </a>
+                            @endif
+                        
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 User
@@ -19,6 +31,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
                                 Plant
                             </a>
+                           
                             <a class="nav-link" href="{{route('admin.plantingtool')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
                                 Planting Tool
@@ -33,10 +46,15 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Picture
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('admin.pesticide.list')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Pesticide
                             </a>
+                            <a class="nav-link" href="{{route('admin.stock')}}">
+                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
+                                Stock
+                            </a>
+                            
                             <a class="nav-link" href="{{route('admin.payment.create')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Payment
@@ -45,7 +63,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Invoice
                             </a>
-                            <a class="nav-link" href="{{route('product.index')}}">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Report
                             </a>

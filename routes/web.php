@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\PlantingtoolController;
 use App\Http\Controllers\Backend\PictureController;
 use App\Http\controllers\Backend\PesticideController;
 use App\Http\Controllers\Backend\PlantnameController;
+use App\Http\Controllers\Backend\StockController;
+use App\Http\Controllers\Backend\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,15 +23,12 @@ use App\Http\Controllers\Backend\PlantnameController;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('website.master');
 // });
 Route::get('/admin',[AdminController::class,'system'])->name('dashboard');
 
  Route::get('/admin/planting_tool',[PlantingController::class,'tool'])->name('admin.planting');
 
- Route::get('/products/list',[ProductController::class,'index'])->name('product.index');
- Route::get('/products/create',[ProductController::class,'create'])->name('product.create');
- Route::post('/products/store',[ProductController::class,'store'])->name('product.store');
  
  Route::get('/admin/admin',[AdminController::class,'adminpart'])->name('admin.adminpart');
 
@@ -53,19 +52,33 @@ Route::get('/admin/plantingtool/list',[PlantingtoolController::class,'plantingli
 Route::get('/admin/planting/form',[PlantingtoolController::class,'plantingform'])->name('planting.form');
 Route::post('/admin/plantingtool/store',[PlantingtoolController::class,'store'])->name('plantingtool.store');
 
-// Plantname
-Route::get('admin/plantname/list',[PlantnameController::class,'plantname'])->name('admin.Plantname');
-Route::get('admin/plantname/form',[PlantnameController::class,'plantnameform'])->name('plant.form');
 
 // picture
 Route::get('admin/picture',[PictureController::class,'picturelist'])->name('admin.picture');
 Route::get('admin/picture/form',[PictureController::class,'pictureform'])->name('picture.form');
+Route::post('admin/picture/store',[PictureController::class,'store'])->name('picture.store');
 
 // Pesticide
 Route::get('admin/pesticide',[PesticideController::class,'pesticide'])->name('admin.pesticide.list');
-Route::get('admin/pesticide',[PesticideController::class,'pesticide_form'])->name('pesticide.form');
+Route::get('admin/pesticide/form',[PesticideController::class,'pesticideform'])->name('pesticide.form');
+Route::post('admin/pesticide/store',[PesticideController::class,'store'])->name('pesticide.store');
 
 // plantName
 Route::get('/admin/plantname/list',[PlantnameController::class,'plantlist'])->name('admin.plant.name');
 Route::get('/admin/plantname/form',[PlantnameController::class,'Plantname'])->name('plantname');
-Route::post('/plants/store',[PlantnameController::class,'store'])->name('plant.store');
+Route::post('plants/store',[PlantnameController::class,'store'])->name('plant.store');
+
+
+
+// stock
+Route::get('admin/stock/list',[StockController::class,'stock'])->name('admin.stock');
+Route::get('admin/stock/form',[StockController::class,'stockform'])->name('stock.form');
+Route::post('/stock/store',[StockController::class,'store'])->name('stock.store');
+
+// Registration
+
+Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
+Route::post('/user/do/registration',[LoginController::class,'doregistration'])->name('user.do.registration');
+Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
+Route::post('/user/do/login',[LoginController::class,'dologin'])->name('user.do.login');
+Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');

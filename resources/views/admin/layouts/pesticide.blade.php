@@ -5,14 +5,21 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Pesticide Name</th>
+      <th scope="col">Pesticide Type</th>
+      <th scope="col">Pesticide Details</th>
+      <th scope="col">Pesticide Price</th>
     </tr>
   </thead>
   <tbody>
-    
+  @foreach($pesticide as $data)
+<tr>
+      <th scope="row">{{$data->pesticide_name}}</th>
+      <td>{{$data->pesticide_type}}</td>
+      <td>{{$data->pesticide_details}}</td>
+      <td>{{$data->pesticide_price}}</td>
+    </tr>
+    @endforeach
   </tbody>
 </table>
 

@@ -17,6 +17,12 @@ class PlantnameController extends Controller
         return view('admin.layouts.Plantname_form');
     }
     public function store(Request $request){
+        $request->validate([
+            'plant_name'=>'required',
+            'plant_id'=>'required',
+            'plant_type'=>'required',
+            'plant_quantity'=>'required',
+        ]);
         plant::create([
             'plant_name'=>$request->plant_name,
             'plant_id'=>$request->plant_id,
@@ -26,6 +32,6 @@ class PlantnameController extends Controller
 
 
         ]);
-        return redirect()->back();
+        return redirect()->route('admin.plant.name');
     }
 }

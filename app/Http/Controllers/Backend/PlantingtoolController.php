@@ -17,12 +17,20 @@ class PlantingtoolController extends Controller
         return view('admin.layouts.plantingtool_form');
     }
     public function store(Request $request){
+        $request->validate([
+            'user_name'=>'required',
+            'user_phone_number'=>'required',
+            'user_address'=>'required',
+            'tool_type'=>'required',
+
+
+        ]);
         plantingtool::create([
             'user_name'=>$request->user_name,
             'user_phone_number'=>$request->user_phone_number,
             'user_address'=>$request->user_address,
             'tool_type'=>$request->tool_type,
         ]);
-        return redirect()->back();
+        return redirect()->route('admin.plantingtool');
     }
 }

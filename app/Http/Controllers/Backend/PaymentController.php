@@ -18,6 +18,14 @@ class PaymentController extends Controller
         return view('admin.layouts.payment_form');
     }
     public function store(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'phone_number'=>'required',
+            'address'=>'required',
+            'product_type'=>'required',
+            'product_quantity'=>'required',
+            'product_price'=>'required',
+        ]);
         payment::create([
             'name'=>$request->name,
             'phone_number'=>$request->phone_number,
@@ -27,6 +35,6 @@ class PaymentController extends Controller
             'product_price'=>$request->product_price,
 
         ]);
-        return redirect()->back();
+        return redirect()->route('admin.payment.create');
     }
 }
