@@ -8,6 +8,7 @@
       <th scope="col">Plant Name</th>
       <th scope="col">Plant ID</th>
       <th scope="col">Plant Details</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,9 @@
       <th scope="row">{{$data->plant_name}}</th>
       <td>{{$data->plant_id}}</td>
       <td>{{$data->plant_details}}</td>
+      <td>
+        <a class="btn btn-warning" href="">View</a>
+      </td>
       
     </tr>
     @endforeach

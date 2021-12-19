@@ -11,6 +11,7 @@
       <th scope="col">User Phone Number</th>
       <th scope="col">User Address</th>
       <th scope="col">Soil Type</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,9 @@
       <td>{{$data->user_phone_number}}</td>
       <td>{{$data->user_address}}</td>
       <td>{{$data->soil_type}}</td>
+      <td>
+        <a class="btn btn-danger" href="">View</a>
+      </td>
     </tr>
   @endforeach
     

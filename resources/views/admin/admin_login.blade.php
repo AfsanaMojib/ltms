@@ -3,11 +3,12 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<form class="form-horizontal" action="{{route('user.do.registration')}}" method="POST">
-    @csrf
+<form class="form-horizontal" action="{{route('admin.doLogin')}}" method='post'>
+  @csrf
+    
   <fieldset>
     <div id="legend">
-      <legend class="">Registration Info</legend>
+      <legend class="">Login Info</legend>
     </div>
     <div class="control-group">
       <!-- Username -->
@@ -26,23 +27,8 @@
         
       </div>
     </div>
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="username">Phone Number</label>
-      <div class="controls">
-        <input name="phone_number" type="number" id="username" name="username" placeholder="" class="input-xlarge">
-        
-      </div>
-    </div>
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="username">Address</label>
-      <div class="controls">
-        <input name="address" type="text" id="username" name="username" placeholder="" class="input-xlarge">
-        
-      </div>
-    </div>
- 
+    
+    
     <div class="control-group">
       <!-- Password-->
       <label class="control-label" for="password">Password</label>
@@ -57,10 +43,9 @@
     <div class="control-group">
       <!-- Button -->
       <div class="controls">
-        <button class="btn btn-success">Register</button>
+        <button class="btn btn-success">Login</button>
       </div>
     </div>
   </fieldset>
 </form>
 
-<div class="border-top card-body text-center">Have an account? <a href="{{route('user.login')}}">Log In</a></div>

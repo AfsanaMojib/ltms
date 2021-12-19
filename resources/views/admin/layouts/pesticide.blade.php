@@ -8,7 +8,9 @@
       <th scope="col">Pesticide Name</th>
       <th scope="col">Pesticide Type</th>
       <th scope="col">Pesticide Details</th>
-      <th scope="col">Pesticide Price</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+
     </tr>
   </thead>
   <tbody>
@@ -18,6 +20,10 @@
       <td>{{$data->pesticide_type}}</td>
       <td>{{$data->pesticide_details}}</td>
       <td>{{$data->pesticide_price}}</td>
+      <td>
+        <a class="btn btn-warning" href="">View</a>
+      </td>
+      
     </tr>
     @endforeach
   </tbody>

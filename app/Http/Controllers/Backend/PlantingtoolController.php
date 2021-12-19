@@ -33,4 +33,13 @@ class PlantingtoolController extends Controller
         ]);
         return redirect()->route('admin.plantingtool');
     }
+    public function plantingtooldetails($id)
+    {
+
+          //        collection= get(), all()====== read with loop (foreach)
+          //       object= first(), find(), findOrFail(),======direct
+      $plantingtool=Plantingtool::where('id',$id)->first();
+       //      $product=Product::where('id',$product_id)->first();
+        return view('admin.layouts.plantingtool_details',compact('plantingtool'));
+    }
 }

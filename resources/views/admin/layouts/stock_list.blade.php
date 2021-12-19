@@ -9,6 +9,7 @@
       <th scope="col">Tree Catagory</th>
       <th scope="col">Tree Quantity</th>
       <th scope="col">Unit Price</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,10 @@
       <td>{{$data->tree_catagory}}</td>
       <td>{{$data->tree_quantity}}</td>
       <td>{{$data->unit_price}}</td>
+      <td>
+        <a class="btn btn-secondary" href="#">view</a>
+      </td>
+
     </tr>
     @endforeach
    

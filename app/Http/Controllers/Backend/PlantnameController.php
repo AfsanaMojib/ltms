@@ -34,4 +34,20 @@ class PlantnameController extends Controller
         ]);
         return redirect()->route('admin.plant.name');
     }
+
+    public function plantnamedetails($plant_id)
+    {
+
+          //        collection= get(), all()====== read with loop (foreach)
+          //       object= first(), find(), findOrFail(),======direct
+      $plant=Plant::where('plant_id',$plant_id)->first();
+       //      $product=Product::where('id',$product_id)->first();
+        return view('admin.layouts.plantname_details',compact('plant'));
+    }
+
+    public function plantnamedelete($id){
+        $cc=Plant::find($id)->delete();
+    
+        return redirect()->back()->with('success','plantname Deleted.');
+    }
 }

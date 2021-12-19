@@ -9,7 +9,8 @@
       <th scope="col">User Name</th>
       <th scope="col">User ID</th>
       <th scope="col">Image</th>
-      <th scope="col">Image Type</th>
+      <th scope="col">Action</th>
+
     </tr>
   </thead>
   <tbody>
@@ -17,8 +18,12 @@
     <tr>
       <th scope="row">{{$data->user_name}}</th>
       <td>{{$data->user_id}}</td>
-      <td>{{$data->image}}</td>
+      <!-- <td>{{$data->image}}</td> -->
+
       <td ><img src= "{{url('/uploads/'.$data->image)}}" alt="picture image" width="100px"></td>
+      <td>
+        <a class="btn btn-warning" href="">View</a>
+      </td>
     </tr>
     @endforeach
    
