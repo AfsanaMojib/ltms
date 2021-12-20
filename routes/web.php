@@ -66,24 +66,33 @@ Route::post('/payments/store',[PaymentController::class,'store'])->name('payment
 Route::get('/admin/soil_texture',[ SoiltextureController::class,'soil'])->name('admin.soil_texture');
 Route::get('/admin/soil_form',[SoiltextureController::class,'soilform'])->name('soiltexture.form');
 Route::post('/soiltexture/add',[SoiltextureController::class,'add'])->name('soiltexture.add');
+Route::get('soiltexture/view/{id}',[SoiltextureController::class,'soiltexturedetails'])->name('admin.soiltexture.details');
+Route::get('soiltexture/delete/{id}',[SoiltextureController::class,'soiltexturedelete'])->name('admin.soiltexture.delete');
+
 
 // planting tool
 Route::get('/admin/plantingtool/list',[PlantingtoolController::class,'plantinglist'])->name('admin.plantingtool');
 Route::get('/admin/planting/form',[PlantingtoolController::class,'plantingform'])->name('planting.form');
 Route::post('/admin/plantingtool/store',[PlantingtoolController::class,'store'])->name('plantingtool.store');
-Route::get('plant/view/{id}',[PlantnameController::class,'plantnamedetails'])->name('admin.plantingtool.details');
+Route::get('plant-tool/view/{id}',[PlantingtoolController::class,'plantingtooldetails'])->name('admin.plantingtool.details');
+Route::get('plant-tool/delete/{id}',[PlantingtoolController::class,'plantingtooldelete'])->name('admin.plantingtool.delete');
 
 
 // picture
 Route::get('admin/picture',[PictureController::class,'picturelist'])->name('admin.picture');
 Route::get('admin/picture/form',[PictureController::class,'pictureform'])->name('picture.form');
 Route::post('admin/picture/store',[PictureController::class,'store'])->name('picture.store');
+Route::get('picture/view/{id}',[PictureController::class,'picturedetails'])->name('admin.picture.details');
+Route::get('picture/delete/{id}',[PictureController::class,'picturedelete'])->name('admin.picture.delete');
+
+
 
 // Pesticide
 Route::get('admin/pesticide',[PesticideController::class,'pesticide'])->name('admin.pesticide.list');
 Route::get('admin/pesticide/form',[PesticideController::class,'pesticideform'])->name('pesticide.form');
 Route::post('admin/pesticide/store',[PesticideController::class,'store'])->name('pesticide.store');
-
+Route::get('pesticide/view/{id}',[PesticideController::class,'pesticidedetails'])->name('admin.pesticide.details');
+Route::get('pesticide/delete/{id}',[PesticideController::class,'pesticidedelete'])->name('admin.pesticide.delete');
 // plantName
 Route::get('/admin/plantname/list',[PlantnameController::class,'plantlist'])->name('admin.plant.name');
 Route::get('/admin/plantname/form',[PlantnameController::class,'Plantname'])->name('plantname');
@@ -95,9 +104,11 @@ Route::get('plant/delete/{id}',[PlantnameController::class,'plantnamedelete'])->
 
 
 // stock
-Route::get('admin/stock/list',[StockController::class,'stock'])->name('admin.stock');
+Route::get('/stock/list',[StockController::class,'stock'])->name('admin.stock');
 Route::get('admin/stock/form',[StockController::class,'stockform'])->name('stock.form');
 Route::post('/stock/store',[StockController::class,'store'])->name('stock.store');
+Route::get('/stocks/view/{id}',[StockController::class,'stockdetails'])->name('admin.stock.details');
+
 
 // Registration
 
@@ -111,7 +122,8 @@ Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout'
 Route::get('/admin/planttype/list',[PlanttypeController::class,'plantT'])->name('admin.plant.type');
 Route::get('/admin/planttype/form',[PlanttypeController::class,'plantTform'])->name('planttype.form');
 Route::post('/planttype/store',[PlanttypeController::class,'store'])->name('planttype.store');
-
+Route::get('planttype/view/{id}',[PlanttypeController::class,'planttypedetails'])->name('admin.planttype.details');
+Route::get('planttype/delete/{id}',[PlanttypeController::class,'planttypedelete'])->name('admin.planttype.delete');
 });
 });
 

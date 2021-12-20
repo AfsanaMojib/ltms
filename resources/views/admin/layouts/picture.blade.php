@@ -22,7 +22,8 @@
 
       <td ><img src= "{{url('/uploads/'.$data->image)}}" alt="picture image" width="100px"></td>
       <td>
-        <a class="btn btn-warning" href="">View</a>
+        <a class="btn btn-warning" href="{{route('admin.picture.details',$data->id)}}">View</a>
+        <a class="btn btn-warning" href="{{route('admin.picture.delete',$data->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

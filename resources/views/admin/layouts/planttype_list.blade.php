@@ -18,7 +18,8 @@
       <td>{{$data->plant_id}}</td>
       <td>{{$data->plant_details}}</td>
       <td>
-        <a class="btn btn-warning" href="">View</a>
+        <a class="btn btn-warning" href="{{route('admin.planttype.details',$data->id)}}">View</a>
+        <a class="btn btn-warning" href="{{route('admin.planttype.delete',$data->id)}}">Delete</a>
       </td>
       
     </tr>

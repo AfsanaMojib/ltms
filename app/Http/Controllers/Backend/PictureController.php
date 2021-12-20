@@ -38,4 +38,17 @@ class PictureController extends Controller
         ]);
         return redirect()->route('admin.picture');
     }
+    public function picturedetails($id)
+    {
+
+          
+      $pictures=Picture::where('id',$id)->first();
+       
+        return view('admin.layouts.picture_details',compact('pictures'));
+    }
+    public function picturedelete($id){
+        Picture::find($id)->delete();
+        return redirect()->back()->with('success','Picture Deleted');
+
+    }
 }

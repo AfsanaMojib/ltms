@@ -23,7 +23,8 @@
       <td>{{$data->user_address}}</td>
       <td>{{$data->soil_type}}</td>
       <td>
-        <a class="btn btn-danger" href="">View</a>
+        <a class="btn btn-danger" href="{{route('admin.soiltexture.details',$data->id)}}">View</a>
+        <a class="btn btn-danger" href="{{route('admin.soiltexture.delete',$data->id)}}">Delete</a>
       </td>
     </tr>
   @endforeach

@@ -14,13 +14,14 @@
   </thead>
   <tbody>
     @foreach($stock as $data)
+   
     <tr>
       <th scope="row">{{$data->tree_name}}</th>
       <td>{{$data->tree_catagory}}</td>
       <td>{{$data->tree_quantity}}</td>
       <td>{{$data->unit_price}}</td>
       <td>
-        <a class="btn btn-secondary" href="#">view</a>
+        <a class="btn btn-secondary" href="">View</a>
       </td>
 
     </tr>

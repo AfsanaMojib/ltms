@@ -31,4 +31,18 @@ class SoiltextureController extends Controller
         ]);
         return redirect()->route('admin.soil_texture');
     }
+    public function soiltexturedetails($id)
+    {
+
+          //        collection= get(), all()====== read with loop (foreach)
+          //       object= first(), find(), findOrFail(),======direct
+          $soiltexture=Soiltexture::where('id',$id)->first();
+       //      $product=Product::where('id',$product_id)->first();
+        return view('admin.layouts.soiltexture_details',compact('soiltexture'));
+    }
+    public function soiltexturedelete($id){
+        Soiltexture::find($id)->delete();
+        return redirect()->back()->with('success','Soiltexture Deleted');
+
+    }
 }

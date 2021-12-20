@@ -21,7 +21,8 @@
       <td>{{$data->pesticide_details}}</td>
       <td>{{$data->pesticide_price}}</td>
       <td>
-        <a class="btn btn-warning" href="">View</a>
+      <a class="btn btn-warning" href="{{route('admin.pesticide.details',$data->id)}}">View</a>
+    <a class="btn btn-warning" href="{{route('admin.pesticide.delete',$data->id)}}">Delete</a>
       </td>
       
     </tr>

@@ -30,6 +30,19 @@ class PlanttypeController extends Controller
         ]);
         return redirect()->route('admin.plant.type');
     }
+    public function planttypedetails($id)
+    {
+
+         
+      $planttype=Planttype::where('id',$id)->first();
+       
+        return view('admin.layouts.planttype_details',compact('planttype'));
+    }
+    public function planttypedelete($id){
+        Planttype::find($id)->delete();
+    
+        return redirect()->back()->with('success','planttype Deleted.');
+    }
 }
 
 

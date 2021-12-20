@@ -33,6 +33,12 @@ class StockController extends Controller
         ]);
         return redirect()->route('admin.stock');
     }
+    public function stockdetails($id)
+    {
+          $stock=Stock::where('id',$id)->first();
+      
+        return view('admin.layouts.stock_details',compact('stock'));
+    }
 
 
 

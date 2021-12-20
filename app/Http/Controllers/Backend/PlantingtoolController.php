@@ -42,4 +42,11 @@ class PlantingtoolController extends Controller
        //      $product=Product::where('id',$product_id)->first();
         return view('admin.layouts.plantingtool_details',compact('plantingtool'));
     }
+
+    public function plantingtooldelete($id){
+        Plantingtool::find($id)->delete();
+        return redirect()->back()->with('success','Plantingtool Deleted');
+
+    }
+
 }

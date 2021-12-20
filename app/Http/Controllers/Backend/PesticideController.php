@@ -36,6 +36,21 @@ class PesticideController extends Controller
      
 
         }
+        public function pesticidedetails($id)
+        {
+    
+              //        collection= get(), all()====== read with loop (foreach)
+              //       object= first(), find(), findOrFail(),======direct
+          $pesticide=Pesticide::where('id',$id)->first();
+           //      $product=Product::where('id',$product_id)->first();
+            return view('admin.layouts.pesticide_details',compact('pesticide'));
+        }
+        public function pesticidedelete($id){
+            Pesticide::find($id)->delete();
+            return redirect()->back()->with('success','Pesticide Deleted');
+    
+        }
+    
 }
 
 
