@@ -10,10 +10,11 @@ use App\Http\Controllers\Backend\PictureController;
 use App\Http\controllers\Backend\PesticideController;
 use App\Http\Controllers\Backend\PlantnameController;
 use App\Http\Controllers\Backend\StockController;
-use App\Http\Controllers\Backend\LoginController;
+// use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\PlanttypeController;
-use App\Http\Controllers\Backend\AdminloginController;
+// use App\Http\Controllers\Backend\AdminloginController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\controllers\Backend\ItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,16 +32,17 @@ use App\Http\Controllers\Backend\DashboardController;
 
 
 
-Route::group(['prefix'=>'admin'],function (){
+// Route::get('/login',[AdminloginController::class,'login'])->name('admin.login');
+// Route::post('/login',[AdminloginController::class,'doLogin'])->name('admin.doLogin');
 
-Route::get('/login',[AdminloginController::class,'login'])->name('admin.login');
-Route::post('/login',[AdminloginController::class,'doLogin'])->name('admin.doLogin');
+// Route::group(['prefix'=>'admin'],function (){
 
-Route::group(['middleware'=>'auth'],function (){
-    Route::get('/', function () {
-        return view('admin.layouts.admin');
-    })->name('dashboard');
-    Route::get('/logout',[AdminloginController::class,'logout'])->name('admin.logout');
+// Route::group(['middleware'=>'auth'],function (){
+//     Route::get('/', function () {
+//         return view('admin.layouts.admin');
+//     })->name('dashboard');
+
+// Route::get('/logout',[AdminloginController::class,'logout'])->name('admin.logout');
 
 
 
@@ -52,8 +54,10 @@ Route::get('/admin',[AdminController::class,'system'])->name('dashboard');
  
  Route::get('/admin/admin',[AdminController::class,'adminpart'])->name('admin.adminpart');
 
-
- 
+// item
+Route::get('/admin/item/list',[itemController::class,'itemlist'])->name('admin.item');
+Route::get('/admin/item/form',[itemController::class,'itemform'])->name('item.form');
+Route::post('/admin/store',[itemController::class,'store'])->name('item.store');
 
 
 // Payment
@@ -112,11 +116,11 @@ Route::get('/stocks/view/{id}',[StockController::class,'stockdetails'])->name('a
 
 // Registration
 
-Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
-Route::post('/user/do/registration',[LoginController::class,'doregistration'])->name('user.do.registration');
-Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
-Route::post('/user/do/login',[LoginController::class,'dologin'])->name('user.do.login');
-Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
+// Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
+// Route::post('/user/do/registration',[LoginController::class,'doregistration'])->name('user.do.registration');
+// Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
+// Route::post('/user/do/login',[LoginController::class,'dologin'])->name('user.do.login');
+// Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
 
 // Plant Type
 Route::get('/admin/planttype/list',[PlanttypeController::class,'plantT'])->name('admin.plant.type');
@@ -124,8 +128,8 @@ Route::get('/admin/planttype/form',[PlanttypeController::class,'plantTform'])->n
 Route::post('/planttype/store',[PlanttypeController::class,'store'])->name('planttype.store');
 Route::get('planttype/view/{id}',[PlanttypeController::class,'planttypedetails'])->name('admin.planttype.details');
 Route::get('planttype/delete/{id}',[PlanttypeController::class,'planttypedelete'])->name('admin.planttype.delete');
-});
-});
+// });
+// });
 
 
 

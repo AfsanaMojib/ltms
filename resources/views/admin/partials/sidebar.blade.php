@@ -7,21 +7,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Dashboard
                             </a>
-                            @if(auth()->user())
-                            <a class="nav-link" href="{{route('user.logout')}}">
-                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
-                                Logout
-                            </a>
-                            @else
-                            <a class="nav-link" href="{{route('user.registration')}}">
-                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
-                                Registration
-                            </a>
-                            <a class="nav-link" href="{{route('user.login')}}">
-                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
-                                Log In
-                            </a>
-                            @endif
+                           
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Admin
@@ -30,7 +16,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 User
                             </a>
-                            <a class="nav-link" href="{{route('admin.plant.name')}}">
+                            <a class="nav-link" href="{{route('admin.item')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
                                 Item
                             </a>

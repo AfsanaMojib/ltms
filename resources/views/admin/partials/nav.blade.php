@@ -11,7 +11,6 @@
                 </div>
             </form> -->
 
-            <li><a class="btn btn-secondary" href="{{route('admin.logout')}}">Logout</a></li>
 
             <!-- Navbar-->
             <!-- <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
