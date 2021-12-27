@@ -4,17 +4,20 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Plant;
+use App\Models\Planttype;
 use Illuminate\Http\Request;
 
 class PlantnameController extends Controller
 {
     public function plantlist(){
-        $plant = Plant::all();
+        $plant = Plant::with('planttype')->get();
         // dd($plant);
         return view('admin.layouts.plantname_list',compact('plant'));
     }
     public function Plantname(){
-        return view('admin.layouts.Plantname_form');
+        $planttype=Planttype::all();
+    
+        return view('admin.layouts.Plantname_form',compact('planttype'));
     }
     public function store(Request $request){
         $request->validate([

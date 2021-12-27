@@ -9,4 +9,7 @@ class Plant extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function planttype(){
+        return $this->belongsTo(Planttype::class);
+    }
 }

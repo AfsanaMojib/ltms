@@ -3,6 +3,8 @@
 <h1>Plants</h1>
 <a href="{{route('plantname')}}"class="btn btn-danger">Plant Site</a>
 
+
+
 <table class="table">
   <thead>
     <tr>

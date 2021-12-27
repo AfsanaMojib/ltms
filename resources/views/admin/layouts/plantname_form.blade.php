@@ -6,13 +6,22 @@
     <label for="exampleInputEmail1" class="form-label">Enter Plant Name</label>
     <input required name="plant_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
+
+  
+
+
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Enter Plant ID</label>
     <input required name="plant_id" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Enter Plant Type</label>
-    <input required name="plant_type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<select name="plant_type" id="">
+  @foreach($planttype as $planttype)
+  <option value="{{$planttype->plant_name}}">{{$planttype->plant_name}}</option>
+  @endforeach
+</select>
+    <!-- <input required name="plant_type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Enter Plant Quantity</label>

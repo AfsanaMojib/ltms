@@ -23,6 +23,7 @@
       <td>{{$data->tool_type}}</td>
       <td>
       <a class="btn btn-info" href="{{route('admin.plantingtool.details',$data->id)}}">View</a>
+
       <a class="btn btn-danger" href="{{route('admin.plantingtool.delete',$data->id)}}">Delete</a>
 
       </td>

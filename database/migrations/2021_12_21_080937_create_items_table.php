@@ -18,7 +18,6 @@ class CreateItemsTable extends Migration
             $table->string('item_name');
             $table->string('item_type');
             $table->string('item_category');
-            $table->integer('type_id');
             $table->integer('price');
             $table->string('status');
             $table->string('description');

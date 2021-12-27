@@ -10,6 +10,7 @@
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form> -->
+            <li> <a class="btn btn-danger" href="{{route('admin.logout')}}">Logout</a>
 
 
             <!-- Navbar-->

@@ -19,17 +19,19 @@ class StockController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-            'tree_name'=>'required',
-            'tree_catagory'=>'required',
+            // 'tree_name'=>'required',
+            // 'tree_catagory'=>'required',
             'tree_quantity'=>'required',
-            'unit_price'=>'required',
+            // 'unit_price'=>'required',
+            'tree_id'=>'required',
         ]);
         stock::create([
 
-            'tree_name'=>$request->tree_name,
-            'tree_catagory'=>$request->tree_catagory,
+            // 'tree_name'=>$request->tree_name,
+            // 'tree_catagory'=>$request->tree_catagory,
             'tree_quantity'=>$request->tree_quantity,
-            'unit_price'=>$request->unit_price,
+            // 'unit_price'=>$request->unit_price,
+            'tree_id'=>$request->tree_id,
         ]);
         return redirect()->route('admin.stock');
     }

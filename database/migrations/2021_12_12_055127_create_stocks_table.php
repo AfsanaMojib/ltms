@@ -14,10 +14,12 @@ class CreateStocksTable extends Migration
     public function up()
     {
         Schema::create('stocks', function (Blueprint $table) {
-            $table->string('tree_name');
-            $table->string('tree_catagory');
+            $table->id();
+            // $table->string('tree_name');
+            // $table->string('tree_catagory');
             $table->integer('tree_quantity');
-            $table->integer('unit_price');
+            // $table->integer('unit_price');
+            $table->integer('tree_id');
             $table->timestamps();
         });
     }
