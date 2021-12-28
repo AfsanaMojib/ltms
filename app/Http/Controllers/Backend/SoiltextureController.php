@@ -17,17 +17,25 @@ class SoiltextureController extends Controller
         return view('admin.layouts.soil_texture_form');
     }
     public function add(Request $request){
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = (date('Ymdhms')).'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
         $request->validate([
             'user_name'=>'required',
             'user_phone_number'=>'required',
             'user_address'=>'required',
             'soil_type'=>'required',
+            'image'=>'required',
         ]);
+        
         soiltexture::create([
             'user_name'=>$request->user_name,
             'user_phone_number'=>$request->user_phone_number,
             'user_address'=>$request->user_address,
             'soil_type'=>$request->soil_type,
+            'image'=>$filename,
         ]);
         return redirect()->route('admin.soil_texture');
     }

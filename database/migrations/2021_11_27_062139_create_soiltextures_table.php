@@ -19,6 +19,7 @@ class CreateSoiltexturesTable extends Migration
             $table->integer('user_phone_number');
             $table->string('user_address');
             $table->string('soil_type');
+            $table->string('image');
             $table->timestamps();
         });
     }

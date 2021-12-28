@@ -16,7 +16,12 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Enter Plant Type</label>
-<select name="plant_type" id="">
+    <select name="plant_type" id="plant_type">
+    <option value="vegetable">Vegetable</option>
+    <option value="fruit">Fruit</option>
+    <option value="flower">Flower</option>
+    <option value="medicinal_plants">Medicinal Plants</option>
+  </select>
   @foreach($planttype as $planttype)
   <option value="{{$planttype->plant_name}}">{{$planttype->plant_name}}</option>
   @endforeach
@@ -30,3 +35,5 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection
+
+

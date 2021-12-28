@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\PlanttypeController;
 use App\Http\Controllers\Backend\AdminloginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\controllers\Backend\ItemController;
+use App\Http\Controllers\Frontend\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -139,3 +140,7 @@ Route::get('planttype/delete/{id}',[PlanttypeController::class,'planttypedelete'
 
 //route for dashboard
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
+
+
+// website part
+Route::get('/',[HomeController::class,'whome'])->name('website.home');

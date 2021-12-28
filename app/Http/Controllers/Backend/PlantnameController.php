@@ -9,7 +9,18 @@ use Illuminate\Http\Request;
 
 class PlantnameController extends Controller
 {
-    public function plantlist(){
+    public function plantlist(Request $request){
+
+        
+            $search = $request->query('search');
+            if($search){
+                $plant = Plant::with('planttype')->where('plant_id','Like', '%'.$search.'%')
+                    ->orWhere('plant_name','like','%'.$search.'%')->get();
+                return view('admin.layouts.plantname_list',compact('plant'));
+            }
+
+
+
         $plant = Plant::with('planttype')->get();
         // dd($plant);
         return view('admin.layouts.plantname_list',compact('plant'));

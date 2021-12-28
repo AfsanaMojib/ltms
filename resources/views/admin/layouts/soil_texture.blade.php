@@ -2,7 +2,6 @@
 @section('main')
 <h1>Soil Texture</h1>
 
-  
 <a href="{{route('soiltexture.form')}}" class="btn btn-success">Choose Soil Type</a>
 <table class="table">
   <thead>
@@ -11,7 +10,9 @@
       <th scope="col">User Phone Number</th>
       <th scope="col">User Address</th>
       <th scope="col">Soil Type</th>
+      <th scope="col">Image</th>
       <th scope="col">Action</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,8 @@
       <td>{{$data->user_phone_number}}</td>
       <td>{{$data->user_address}}</td>
       <td>{{$data->soil_type}}</td>
+      <!-- <td>{{$data->image}}</td> -->
+      <td ><img src="{{url('/uploads/'.$data->image)}}" alt="picture image" width="100px"></td>
       <td>
         <a class="btn btn-danger" href="{{route('admin.soiltexture.details',$data->id)}}">View</a>
         <a class="btn btn-danger" href="{{route('admin.soiltexture.delete',$data->id)}}">Delete</a>
