@@ -9,7 +9,7 @@
     <h1>Item Details</h1>
 
 <p>Item Name: {{ $item->item_name}}</p>
-<p>Item Type: {{ $item->item_type}}</p>
+<p>Item Type: {{ $item->ItemType->item_name}}</p>
 
 <p> Item Category:{{$item->item_category}}</span></h4></p>
 <p>Price: {{$item->price}}</p>
