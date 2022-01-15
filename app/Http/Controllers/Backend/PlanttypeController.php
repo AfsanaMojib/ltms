@@ -8,7 +8,14 @@ use Illuminate\Http\Request;
 
 class PlanttypeController extends Controller
 {
-    public function plantT(){
+    public function plantT(Request $request){
+        $search = $request->query('search');
+        if($search){
+            $planttype = Planttype::where('plant_name','Like', '%'.$search.'%')
+                ->orWhere('plant_name','like','%'.$search.'%')->get();
+            return view('admin.layouts.planttype_list',compact('planttype'));
+        }
+
         $planttype=Planttype::all();
         // dd($planttype);
 

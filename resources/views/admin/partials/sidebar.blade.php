@@ -8,17 +8,17 @@
                                 Dashboard
                             </a>
                            
-                            <a class="nav-link" href="#">
+                            <!-- <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Admin
-                            </a>
-                            <a class="nav-link" href="#">
+                            </a> -->
+                            <a class="nav-link" href="{{route('admin.user')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 User
                             </a>
                             <a class="nav-link" href="{{route('admin.item')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
-                                Item
+                               Add Item
                             </a>
                             <a class="nav-link" href="{{route('admin.plant.name')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
@@ -65,8 +65,16 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Report
                             </a>
-                           
+                            <a class="nav-link" href="{{route('user.feedback')}}">
+                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
+                                Feedback
+                            </a>
                             
+
+
+
+
+                          
                             
                             <!-- <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">

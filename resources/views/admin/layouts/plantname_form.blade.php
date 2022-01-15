@@ -22,9 +22,9 @@
     <option value="flower">Flower</option>
     <option value="medicinal_plants">Medicinal Plants</option>
   </select>
-  @foreach($planttype as $planttype)
+  <!-- @foreach($planttype as $planttype)
   <option value="{{$planttype->plant_name}}">{{$planttype->plant_name}}</option>
-  @endforeach
+  @endforeach -->
 </select>
     <!-- <input required name="plant_type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
   </div>

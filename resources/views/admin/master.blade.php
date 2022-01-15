@@ -16,7 +16,7 @@
         <div id="layoutSidenav">
         @include('admin.partials.sidebar')
             <div id="layoutSidenav_content">
-                <main>
+                <main style="margin-left:20px; margin-top:20px;">
                     @yield('main')
                 </main>
                 

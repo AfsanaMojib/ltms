@@ -7,7 +7,7 @@
         {{session()->get('success')}}
     </p>
 @endif
-<form action="{{route('admin.etask.update', $item->id)}}" method='post'>
+<form action="{{route('admin.item.update', $item->id)}}" method='post'>
 @method('PUT')
 
     @csrf

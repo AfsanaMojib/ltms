@@ -10,12 +10,19 @@ use App\Http\Controllers\Backend\PictureController;
 use App\Http\controllers\Backend\PesticideController;
 use App\Http\Controllers\Backend\PlantnameController;
 use App\Http\Controllers\Backend\StockController;
-// use App\Http\Controllers\Backend\LoginController;
+use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\PlanttypeController;
 use App\Http\Controllers\Backend\AdminloginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\controllers\Backend\ItemController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\FeedbackController;
+use App\Http\Controllers\Frontend\ShowUserController;
+use App\Http\Controllers\Frontend\UserRegistrationController;
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,13 +62,14 @@ Route::get('/admin',[AdminController::class,'system'])->name('dashboard');
  
  Route::get('/admin/admin',[AdminController::class,'adminpart'])->name('admin.adminpart');
 
+
 // item
 Route::get('/admin/item/list',[itemController::class,'itemlist'])->name('admin.item');
 Route::get('/admin/item/form',[itemController::class,'itemform'])->name('item.form');
 Route::post('/admin/store',[itemController::class,'store'])->name('item.store');
 Route::get('item/view/{id}',[itemController::class,'itemdetails'])->name('admin.item.details');
 Route::get('item/edit/{id}',[itemController::class,'itemEdit'])->name('admin.item.edit');
-Route::put('item/update/{id}',[itemController::class,'itemUpdate'])->name('admin.etask.update');
+Route::put('item/update/{id}',[itemController::class,'itemUpdate'])->name('admin.item.update');
 Route::get('item/delete/{id}',[ItemController::class,'itemdelete'])->name('admin.item.delete');
 
 
@@ -76,6 +84,8 @@ Route::get('/admin/soil_texture',[ SoiltextureController::class,'soil'])->name('
 Route::get('/admin/soil_form',[SoiltextureController::class,'soilform'])->name('soiltexture.form');
 Route::post('/soiltexture/add',[SoiltextureController::class,'add'])->name('soiltexture.add');
 Route::get('soiltexture/view/{id}',[SoiltextureController::class,'soiltexturedetails'])->name('admin.soiltexture.details');
+Route::get('soiltexture/edit/{id}',[SoiltextureController::class,'soiltextureEdit'])->name('admin.soiltexture.edit');
+Route::put('soiltexture/update/{id}',[SoiltextureController::class,'soiltextureUpdate'])->name('admin.soiltexture.update');
 Route::get('soiltexture/delete/{id}',[SoiltextureController::class,'soiltexturedelete'])->name('admin.soiltexture.delete');
 
 
@@ -84,7 +94,9 @@ Route::get('/admin/plantingtool/list',[PlantingtoolController::class,'plantingli
 Route::get('/admin/planting/form',[PlantingtoolController::class,'plantingform'])->name('planting.form');
 Route::post('/admin/plantingtool/store',[PlantingtoolController::class,'store'])->name('plantingtool.store');
 Route::get('plant-tool/view/{id}',[PlantingtoolController::class,'plantingtooldetails'])->name('admin.plantingtool.details');
-Route::get('plant-tool/delete/{id}',[PlantingtoolController::class,'plantingtooldelete'])->name('admin.plantingtool.delete');
+Route::get('plant_tool/edit/{id}',[PlantingtoolController::class,'plantingtoolEdit'])->name('admin.plantingtool.edit');
+Route::put('plant_tool/update/{id}',[PlantingtoolController::class,'plantingtoolUpdate'])->name('admin.plantingtool.update');
+Route::get('plant_tool/delete/{id}',[PlantingtoolController::class,'plantingtooldelete'])->name('admin.plantingtool.delete');
 
 
 // picture
@@ -119,13 +131,17 @@ Route::post('/stock/store',[StockController::class,'store'])->name('stock.store'
 Route::get('/stocks/view/{id}',[StockController::class,'stockdetails'])->name('admin.stock.details');
 
 
-// Registration
+// // Registration
 
 // Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
 // Route::post('/user/do/registration',[LoginController::class,'doregistration'])->name('user.do.registration');
 // Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
 // Route::post('/user/do/login',[LoginController::class,'dologin'])->name('user.do.login');
 // Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
+
+// Feedback
+Route::get('/user/feedback/list',[FeedbackController::class,'feedbacklist'])->name('user.feedback');
+Route::post('/feedback/store',[FeedbackController::class,'store'])->name('feedback.store');
 
 // Plant Type
 Route::get('/admin/planttype/list',[PlanttypeController::class,'plantT'])->name('admin.plant.type');
@@ -144,3 +160,15 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.i
 
 // website part
 Route::get('/',[HomeController::class,'whome'])->name('website.home');
+
+// user feedback
+Route::get('/website/user/feedback',[ShowUserController::class,'showuser'])->name('website.user.feedback');
+Route::post('/website/do/user/feedback',[ShowUserController::class,'douserfeedback'])->name('website.user.do.feedback');
+
+// user registration
+
+ Route::get('/user/website/registration',[UserRegistrationController::class,'userR'])->name('website.user.registration');
+
+//  user
+Route::get('/admin/user/list',[UserController::class,'user'])->name('admin.user');
+Route::post('/admin/store',[UserController::class,'store'])->name('user.store');

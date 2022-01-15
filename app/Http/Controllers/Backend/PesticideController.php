@@ -8,7 +8,15 @@ use Illuminate\Http\Request;
 
 class PesticideController extends Controller
 {
-    public function pesticide(){
+    public function pesticide(Request $request){
+
+
+        $search = $request->query('search');
+        if($search){
+            $pesticide=Pesticide::where('pesticide_name','Like', '%'.$search.'%')
+                ->orWhere('pesticide_type','like','%'.$search.'%')->get();
+            return view('admin.layouts.pesticide',compact('pesticide'));
+        }
         $pesticide=Pesticide::all();
         // dd($pesticide);
         return view('admin.layouts.pesticide',compact('pesticide'));

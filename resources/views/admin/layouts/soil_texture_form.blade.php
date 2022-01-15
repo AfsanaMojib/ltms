@@ -3,6 +3,7 @@
 
 <form action="{{route('soiltexture.add')}}"method='post'enctype="multipart/form-data">
   @csrf
+  
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Enter User Name</label>
     <input required name="user_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

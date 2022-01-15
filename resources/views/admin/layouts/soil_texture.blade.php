@@ -27,6 +27,7 @@
       <td ><img src="{{url('/uploads/'.$data->image)}}" alt="picture image" width="100px"></td>
       <td>
         <a class="btn btn-danger" href="{{route('admin.soiltexture.details',$data->id)}}">View</a>
+        <a class="btn btn-info" href="{{route('admin.soiltexture.edit',$data->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('admin.soiltexture.delete',$data->id)}}">Delete</a>
       </td>
     </tr>

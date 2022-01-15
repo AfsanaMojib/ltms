@@ -2,6 +2,21 @@
 @section('main')
 <h1>Plant Type</h1>
 <a href="{{route('planttype.form')}}" class="btn btn-warning">Plant Type</a>
+
+<form action="{{route('admin.plant.type')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" name="search" placeholder="Search" arial-label="Search" aria-describedby="search-addon" />
+    <!-- <label class="form-label" for="form1">Search</label> -->
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+</form>
+
+
 <table class="table">
   <thead>
     <tr>

@@ -7,16 +7,19 @@
       <th scope="col">Email</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Address</th>
-      <th scope="col">Password</th>
+      <th scope="col">Role</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($user as $data)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$data->name}}</th>
+      <td>{{$data->email}}</td>
+      <td>{{$data->phone_number}}</td>
+      <td>{{$data->address}}</td>
+      <td>{{$data->role}}</td>
     </tr>
+    @endforeach
     
   </tbody>
 </table>

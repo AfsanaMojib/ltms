@@ -23,6 +23,8 @@
     <option value="fruit">Fruit</option>
     <option value="flower">Flower</option>
     <option value="medicinal_plants">Medicinal Plants</option>
+    <option value="pesticide">Pesticide</option>
+    <option value="tool">Tool</option>
   </select>
   </div>
   

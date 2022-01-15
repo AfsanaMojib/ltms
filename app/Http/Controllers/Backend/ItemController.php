@@ -9,7 +9,13 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function itemlist(){
+    public function itemlist(Request $request){
+        $search = $request->query('search');
+        if($search){
+            $item = Item::where('item_type','Like', '%'.$search.'%')
+                ->orWhere('item_name','like','%'.$search.'%')->get();
+            return view('admin.layouts.plantname_list',compact('item'));
+        }
         $item = Item::all();
 
         return view('admin.layouts.item_list',compact('item'));

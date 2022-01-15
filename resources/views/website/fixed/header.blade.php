@@ -15,10 +15,10 @@
 					<nav id="nav">
 						<ul>
 							<li class="active"><a href="index.html">Homepage</a></li>
-							<li><a href="left-sidebar.html">User</a></li>
-							<li><a href="right-sidebar.html">Registration</a></li>
+							<li><a href="{{route('website.user.feedback')}}">User Feedback</a></li>
+							<li><a href="{{route('website.user.registration')}}">Registration</a></li>
 							<li><a href="two-sidebars.html">Login</a></li>
-							<li><a href="no-sidebar.html">Item</a></li>
+							<!-- <li><a href="no-sidebar.html">User Feedback</a></li> -->
 						</ul>
 					</nav>
 			</div>
