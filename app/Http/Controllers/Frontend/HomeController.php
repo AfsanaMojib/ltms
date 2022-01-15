@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function whome(){
+    public function home(){
         return view('website.pages.home');
     }
 }
