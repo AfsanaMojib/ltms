@@ -26,6 +26,8 @@
       <th scope="col">Price</th>
      
       <th scope="col">Description</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
 
     </tr>
@@ -41,6 +43,8 @@
       <td>{{$item->price}}</td>
      
       <td>{{$item->description}}</td>
+      <td>{{$item->quantity}}</td>
+      <td>{{$item->status}}</td>
       <td>
       <a class="btn btn-info" href="{{route('admin.item.details',$item->id)}}">View</a>
       <a class="btn btn-info" href="{{route('admin.item.edit',$item->id)}}">Edit</a>

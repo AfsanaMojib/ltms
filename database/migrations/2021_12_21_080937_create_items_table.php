@@ -20,6 +20,7 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->string('status');
             $table->string('description');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

@@ -39,6 +39,7 @@ class ItemController extends Controller
             'price' => 'required',
             'status' => 'required',
             'description' => 'required',
+            'quantity' => 'required',
 
         ]);
         item::create([
@@ -49,6 +50,7 @@ class ItemController extends Controller
             'price' => $request->price,
             'status' => $request->status,
             'description' => $request->description,
+            'quantity' => $request->quantity,
         ]);
         return redirect()->route('admin.item');
     }
@@ -71,7 +73,8 @@ class ItemController extends Controller
 
         //        dd($product);
         //        dd($all_categories);
-        return view('admin.layouts.item_edit', compact('item'));
+        $item_types = ItemType::all();
+        return view('admin.layouts.item_edit', compact('item', 'item_types'));
     }
     public function itemUpdate(Request $request, $id)
     {
@@ -85,7 +88,7 @@ class ItemController extends Controller
         $item->update([
             // field name from db || field name from form
             'item_name' => $request->item_name,
-            'item_type' => $request->item_type,
+            'item_type_id' => $request->item_type_id,
             'item_category' => $request->item_category,
             'price' => $request->price,
             'status' => $request->status,
