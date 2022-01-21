@@ -17,6 +17,7 @@ class AddItemTypeIdToItemsTable extends Migration
 
             $table->foreignId('item_type_id')
                 ->references('id')->on('item_types');
+                
         });
     }
 
