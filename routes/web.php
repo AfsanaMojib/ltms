@@ -182,11 +182,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// user profile
-Route::get('/website/user/profile', [UserprofileController::class, 'userprofile'])->name('userprofile');
-
-Route::get('/website/user/update/profile', [UserprofileController::class, 'userprofileupdate'])->name('website.user.update.profile');
-
 
 // website Item
 
@@ -198,6 +193,12 @@ Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart');
 Route::get('/cart/add/{id}', [CartController::class, 'AddtoCart'])->name('cart.add');
 Route::get('/cart/remove/{id}', [CartController::class, 'RemoveFromCart'])->name('cart.remove');
 Route::group(['middleware' => 'auth'], function () {
+
+    // user profile
+    Route::get('/website/user/profile', [UserprofileController::class, 'userprofile'])->name('userprofile');
+
+    Route::get('/website/user/update/profile', [UserprofileController::class, 'userprofileupdate'])->name('website.user.update.profile');
+
 
     Route::get('/checkout', [CartController::class, 'CheckoutPage'])->name('checkout');
     Route::get('/checkout/ok', [CartController::class, 'CheckoutDone'])->name('checkout.done');

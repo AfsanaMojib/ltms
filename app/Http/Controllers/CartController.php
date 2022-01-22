@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
-
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -43,11 +44,24 @@ class CartController extends Controller
     }
     public function CheckoutDone(Request $request)
     {
-        $order = Order::create([
-            'user_id'=>auth()->user()->id,
-            'amount'=>Cart::subtotal(),
-        ]);
         
+        DB::transaction(function () {
+            $items = Cart::content();
+            $order = Order::create([
+                'user_id' => auth()->user()->id,
+                'amount' => Cart::subtotal(),
+            ]);
+            foreach ($items as $item) {
+
+                OrderProduct::create([
+                    'order_id' => $order->id,
+                    'item_id' => $item->id,
+                    'quantity' => $item->qty,
+                    'unit_price' => $item->price,
+                ]);
+            }
+        });
         Cart::destroy();
+        return redirect()->route('userprofile');
     }
 }
