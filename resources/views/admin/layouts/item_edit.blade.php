@@ -20,17 +20,16 @@
     <label for="exampleInputPassword1" value="{{$item->item_type}}" class="form-label">Item Type</label>
     <select name="item_type_id" id="item_type">
       @foreach ($item_types as $item_type)
-      <option value="{{ $item_type->id }}">{{ $item_type->item_name }}</option>
+      <option value="{{ $item_type->id }}" {{ ($item_type->id == $item->ItemType->id)?'selected="selected"':'' }}>{{ $item_type->item_name }}</option>
       @endforeach
     </select>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Item Category</label>
-    <select name="item_category" id="item_category">
-      <option value="vegetable">Vegetable</option>
-      <option value="fruit">Fruit</option>
-      <option value="flower">Flower</option>
-      <option value="medicinal_plants">Medicinal Plants</option>
+    <select name="category_id" id="item_type">
+      @foreach ($item_categories as $category)
+      <option value="{{ $category->id }}" {{ ($category->id == $item->category->id)?'selected="selected"':'' }}>{{ $category->name }}</option>
+      @endforeach
     </select>
   </div>
 
@@ -51,6 +50,7 @@
     <label for="exampleInputPassword1" class="form-label">Description</label>
     <textarea name="description" type="text" value="" class="form-control" id="exampleInputPassword1">{{$item->description}} </textarea>
   </div>
+
 
   <button type="submit" class="btn btn-primary">Update</button>
 </form>

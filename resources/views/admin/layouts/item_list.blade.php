@@ -38,7 +38,7 @@
     <tr>
       <th scope="row">{{$item->item_name}}</th>
       <td>{{$item->ItemType->item_name}}</td>
-      <td>{{$item->item_category}}</td>
+      <td>{{$item->category->name}}</td>
       
       <td>{{$item->price}}</td>
      
