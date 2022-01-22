@@ -25,10 +25,10 @@
                     @endforeach
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (USD)</span>
-                        <strong>${{ $total }}</strong>
+                        <strong>Taka{{ $total }}</strong>
                     </li>
                 </ul>
-                <a  class="btn btn-primary btn-lg btn-block" href="#">Continue to checkout</a>
+                <a  class="btn btn-primary btn-lg btn-block" href="{{ route('checkout.done') }}">Continue to checkout</a>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Billing address</h4>

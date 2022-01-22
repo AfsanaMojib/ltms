@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -40,8 +41,13 @@ class CartController extends Controller
         $total = Cart::subtotal();
         return view('website.pages.checkout', compact('items', 'product_count', 'total'));
     }
-    public function CheckoutDone()
+    public function CheckoutDone(Request $request)
     {
+        $order = Order::create([
+            'user_id'=>auth()->user()->id,
+            'amount'=>Cart::subtotal(),
+        ]);
         
+        Cart::destroy();
     }
 }

@@ -197,4 +197,8 @@ Route::post('/website/choose/user/item', [WebItemController::class, 'douseritem'
 Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart');
 Route::get('/cart/add/{id}', [CartController::class, 'AddtoCart'])->name('cart.add');
 Route::get('/cart/remove/{id}', [CartController::class, 'RemoveFromCart'])->name('cart.remove');
-Route::get('/checkout', [CartController::class, 'CheckoutPage'])->name('checkout');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/checkout', [CartController::class, 'CheckoutPage'])->name('checkout');
+    Route::get('/checkout/ok', [CartController::class, 'CheckoutDone'])->name('checkout.done');
+});
