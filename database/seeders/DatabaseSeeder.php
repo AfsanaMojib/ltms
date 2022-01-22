@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ItemCategory;
 use App\Models\ItemType;
 use Illuminate\Database\Seeder;
 
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersTableSeeder::class,
             ItemsSeeder::class,
+            ItemCategorySeeder::class,
         ]);
     }
 }

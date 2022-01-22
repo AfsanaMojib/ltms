@@ -11,7 +11,7 @@
 <p>Item Name: {{ $item->item_name}}</p>
 <p>Item Type: {{ $item->ItemType->item_name}}</p>
 
-<p> Item Category:{{$item->item_category}}</span></h4></p>
+<p> Item Category:{{$item->category->name}}</span></h4></p>
 <p>Price: {{$item->price}}</p>
 <p>Description: {{$item->description}}</p>
 

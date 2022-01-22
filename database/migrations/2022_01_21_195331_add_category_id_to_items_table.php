@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddItemTypeIdToItemsTable extends Migration
+class AddCategoryIdToItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,7 @@ class AddItemTypeIdToItemsTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-
-            $table->foreignId('item_type_id')
-                ->references('id')->on('item_types');
-                
+            $table->foreignId('category_id')->references('id')->on('item_categories');
         });
     }
 

@@ -23,10 +23,14 @@
 			<ul>
 				<li class="active"><a href="index.html">Homepage</a></li>
 				<li><a href="{{route('website.user.feedback')}}">User Feedback</a></li>
+				<li><a href="{{route('website.user.item')}}">Item</a></li>
+
+
+
 				@auth
 				<li>
-					<a href="#">
-						My account
+					<a href="{{route('userprofile')}}">
+						User Profile
 					</a>
 				</li>
 				<li>
@@ -42,8 +46,12 @@
 				<li><a href="{{route('register')}}">Registration</a></li>
 				<li><a href="{{ route('login') }}">Login</a></li>
 				@endauth
-
-				<!-- <li><a href="no-sidebar.html">User Feedback</a></li> -->
+				<li><a href="{{ route('cart') }}" 
+				style="display: flex;align-items: center;justify-content: center;">
+						<i class="fas fa-cart-plus"></i>
+						<x-cart-count/>
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</div>

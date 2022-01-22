@@ -20,6 +20,10 @@ use App\Http\Controllers\Backend\FeedbackController;
 use App\Http\Controllers\Frontend\ShowUserController;
 use App\Http\Controllers\Frontend\UserRegistrationController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Frontend\UserprofileController;
+use App\Http\Controllers\Backend\ChooseitemController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\Frontend\WebItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -141,6 +145,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/user/feedback/list', [FeedbackController::class, 'feedbacklist'])->name('user.feedback');
         Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
 
+        // chooseitem
+        Route::get('/user/chooseitem/list', [ChooseitemController::class, 'choosei'])->name('admin.chooseitem');
+        Route::post('/chooseitem/store', [ChooseitemController::class, 'store'])->name('chooseitem.store');
+
         // Plant Type
         Route::get('/admin/planttype/list', [PlanttypeController::class, 'plantT'])->name('admin.plant.type');
         Route::get('/admin/planttype/form', [PlanttypeController::class, 'plantTform'])->name('planttype.form');
@@ -173,3 +181,26 @@ Route::post('/admin/store', [UserController::class, 'store'])->name('user.store'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// website Item
+
+Route::get('/website/user/item', [WebItemController::class, 'webitem'])->name('website.user.item');
+Route::post('/website/choose/user/item', [WebItemController::class, 'douseritem'])->name('website.user.do.item');
+
+// Cart
+Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart');
+Route::get('/cart/add/{id}', [CartController::class, 'AddtoCart'])->name('cart.add');
+Route::get('/cart/remove/{id}', [CartController::class, 'RemoveFromCart'])->name('cart.remove');
+Route::group(['middleware' => 'auth'], function () {
+
+    // user profile
+    Route::get('/website/user/profile', [UserprofileController::class, 'userprofile'])->name('userprofile');
+
+    Route::post('/website/user/update/profile', [UserprofileController::class, 'userprofileupdate'])
+        ->name('website.user.update.profile');
+
+
+    Route::get('/checkout', [CartController::class, 'CheckoutPage'])->name('checkout');
+    Route::get('/checkout/ok', [CartController::class, 'CheckoutDone'])->name('checkout.done');
+});

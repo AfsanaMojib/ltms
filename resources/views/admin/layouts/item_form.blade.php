@@ -17,13 +17,10 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Item Category</label>
-    <select name="item_category" id="item_category">
-      <option value="vegetable">Vegetable</option>
-      <option value="fruit">Fruit</option>
-      <option value="flower">Flower</option>
-      <option value="medicinal_plants">Medicinal Plants</option>
-      <option value="pesticide">Pesticide</option>
-      <option value="tool">Tool</option>
+    <select name="category_id" id="item_type">
+      @foreach ($item_categories as $category)
+      <option value="{{ $category->id }}">{{ $category->name }}</option>
+      @endforeach
     </select>
   </div>
 
@@ -35,6 +32,10 @@
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Status</label>
     <input name="status" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Quantity</label>
+    <input name="quantity" type="number" class="form-control" id="exampleInputPassword1">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Description</label>
