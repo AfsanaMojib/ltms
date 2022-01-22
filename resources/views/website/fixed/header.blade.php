@@ -46,10 +46,10 @@
 				<li><a href="{{route('register')}}">Registration</a></li>
 				<li><a href="{{ route('login') }}">Login</a></li>
 				@endauth
-				<li><a href="{{ route('cart.show') }}" 
+				<li><a href="#" 
 				style="display: flex;align-items: center;justify-content: center;">
 						<i class="fas fa-cart-plus"></i>
-						<span class="ml-2">(0)</span>
+						<x-cart-count/>
 					</a>
 				</li>
 			</ul>

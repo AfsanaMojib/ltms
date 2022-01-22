@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\UserRegistrationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Frontend\UserprofileController;
 use App\Http\Controllers\Backend\ChooseitemController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Frontend\WebItemController;
 
 /*
@@ -191,3 +192,7 @@ Route::get('/website/user/update/profile', [UserprofileController::class, 'userp
 
 Route::get('/website/user/item', [WebItemController::class, 'webitem'])->name('website.user.item');
 Route::post('/website/choose/user/item', [WebItemController::class, 'douseritem'])->name('website.user.do.item');
+
+// Cart
+Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart');
+Route::get('/cart/add/{id}', [CartController::class, 'AddtoCart'])->name('cart.add');

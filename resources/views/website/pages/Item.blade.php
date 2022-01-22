@@ -32,7 +32,7 @@
                 <td>{{$item->quantity}}</td>
                 <td>{{$item->status}}</td>
                 <td>
-                  <a class="btn btn-warning" href="{{route('admin.item.delete',$item->id)}}">Delete</a>
+                  <a class="btn btn-warning" href="{{route('cart.add',$item->id)}}">Buy Now</a>
                 </td>
               </tr>
               @endforeach
