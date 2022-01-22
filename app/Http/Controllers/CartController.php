@@ -11,8 +11,8 @@ class CartController extends Controller
 {
     public function showCartPage()
     {
-
-        return view('website.pages.cart_page');
+        $items = Cart::content();
+        return view('website.pages.cart_page', compact('items'));
     }
     public function CartProducts()
     {
@@ -27,5 +27,11 @@ class CartController extends Controller
             $item->price,
         );
         return redirect()->back();
+    }
+    public function RemoveFromCart($rowId)
+    {
+        Cart::remove($rowId);
+        return redirect()->back();
+
     }
 }
