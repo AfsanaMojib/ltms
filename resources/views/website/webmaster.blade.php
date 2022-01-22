@@ -17,6 +17,8 @@
 	<script src="{{url('website/js/skel.min.js')}}"></script>
 	<script src="{{url('website/js/skel-panels.min.js')}}"></script>
 	<script src="{{url('website/js/init.js')}}"></script>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="{{url('website/css/skel-noscript.css')}}" />

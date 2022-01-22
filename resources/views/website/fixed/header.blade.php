@@ -46,8 +46,12 @@
 				<li><a href="{{route('register')}}">Registration</a></li>
 				<li><a href="{{ route('login') }}">Login</a></li>
 				@endauth
-
-				<!-- <li><a href="no-sidebar.html">User Feedback</a></li> -->
+				<li><a href="{{ route('cart.show') }}" 
+				style="display: flex;align-items: center;justify-content: center;">
+						<i class="fas fa-cart-plus"></i>
+						<span class="ml-2">(0)</span>
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</div>

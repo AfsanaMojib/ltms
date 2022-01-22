@@ -184,10 +184,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // user profile
 Route::get('/website/user/profile', [UserprofileController::class, 'userprofile'])->name('userprofile');
 
-Route::get('/website/user/update/profile', [UserprofileController::class,'userprofileupdate'])->name('website.user.update.profile');
+Route::get('/website/user/update/profile', [UserprofileController::class, 'userprofileupdate'])->name('website.user.update.profile');
 
 
 // website Item
 
-Route::get('/website/user/item',[WebItemController::class,'webitem'])->name('website.user.item');
-Route::post('/website/choose/user/item',[WebItemController::class,'douseritem'])->name('website.user.do.item');
+Route::get('/website/user/item', [WebItemController::class, 'webitem'])->name('website.user.item');
+Route::post('/website/choose/user/item', [WebItemController::class, 'douseritem'])->name('website.user.do.item');
