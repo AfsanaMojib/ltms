@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Item;
 use App\Models\Product;
 
 use Illuminate\Http\Request;
@@ -10,9 +11,9 @@ use Illuminate\Http\Request;
 class WebItemController extends Controller
 {
     public function webitem(){
-        $product = Product::all();
+        $items = Item::with('ItemType', 'category')->get();
 
-        return view('website.pages.item',compact('product'));
+        return view('website.pages.item',compact('items'));
     }
 
     public function douseritem(Request $request){

@@ -1,96 +1,46 @@
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
-<!------ Include the above in your HEAD tag ---------->
-
-  <form class="form-horizontal" action="{{route('website.user.do.item')}}" method='post'> 
-  
-    @csrf
-   <fieldset>
-    <div class="control-group">  
-       <!-- Username  -->
-      <label class="control-label"  for="username">Plant</label> 
-      <div class="controls">
-      <select name="plant" id="text">
-    <option value="vagetable">Vegetable</option>
-    <option value="flower">Flower</option>
-    <option value="fruit">Fruit</option>
-    <option value="medicinal plant">Medicinal Plant</option>
-     </select>
-        <!-- <input name="plant" type="text" id="username" name="username" placeholder="" class="input-xlarge"> -->
-        
+@extends('website.webmaster')
+@section('main')
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <p>Items</p>
       </div>
-    </div>  
- 
-     <div class="control-group">
-       <!-- E-mail  -->
-       <label class="control-label" for="email">Tool</label>
-      <div class="controls">
-      <select name="tool" id="text">
-    <option value="hoe">Hoe</option>
-    <option value="fork">Fork</option>
-    <option value="spade">Spade</option>
-    <option value="garden glove">Garden Glove</option>
-    <option value="rake">Rake</option>
-     </select>
-
-        <!-- <input name="tool" type="text" id="email" name="email" placeholder="" class="input-xlarge"> -->
-        
-      </div>
-    </div>
-
-    <div class="control-group">
-       <!-- E-mail  -->
-       <label class="control-label" for="email">Soil</label>
-      <div class="controls">
-      <select name="soil" id="text">
-    <option value="sand">Sand</option>
-    <option value="clay">Clay</option>
-    <option value="silt">Slit</option>
-     </select>
-        <!-- <input name="soil" type="text" id="email" name="email" placeholder="" class="input-xlarge"> -->
-        
+      <div class="card-body">
+        <form action="{{route('admin.item')}}">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Item Name</th>
+                <th scope="col">Item Type</th>
+                <th scope="col">Item Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($items as $item)
+              <tr>
+                <th scope="row">{{$item->item_name}}</th>
+                <td>{{$item->ItemType->item_name}}</td>
+                <td>{{$item->category->name}}</td>
+                <td>{{$item->price}}</td>
+                <td>{{$item->description}}</td>
+                <td>{{$item->quantity}}</td>
+                <td>{{$item->status}}</td>
+                <td>
+                  <a class="btn btn-warning" href="{{route('admin.item.delete',$item->id)}}">Delete</a>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </form>
       </div>
     </div>
-    
-    <div class="control-group">
-       <!-- E-mail  -->
-       <label class="control-label" for="email">Pesticide</label>
-      <div class="controls">
-      <select name="pesticide" id="text">
-    <option value="insecticide">Insecticide</option>
-    <option value="herbicide">Herbicide</option>
-    <option value="fungicide">Fungicide</option>
-    <option value="bactericides">Bactericides</option>
-     </select>
-        <!-- <input name="pesticide" type="text" id="email" name="email" placeholder="" class="input-xlarge"> -->
-
-      </div>
-    </div>
-
-    <div class="control-group"> 
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success">Submit</button>
-      </div>
-    </div>
-    
-    
- 
-    
- 
-   
-  </fieldset>
-</form> 
-
-
-
-<!-- <div class="border-top card-body text-center">Have an Account? <a href="#">Sign Up</a></div>  -->
-
-
-
-
-
-
-
-
+  </div>
+</div>
+@endsection

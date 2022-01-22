@@ -4,18 +4,6 @@
 <a href="{{route('item.form')}}" class="btn btn-warning">Add Item</a>
 
 <form action="{{route('admin.item')}}">
-<div class="input-group rounded mt-3 mb-2">
-  <div class="form-outline">
-    <input type="search" id="form1" class="form-control" name="search" placeholder="Search" arial-label="Search" aria-describedby="search-addon" />
-    <!-- <label class="form-label" for="form1">Search</label> -->
-  </div>
-
-
-  <button type="submit" class="btn btn-primary">
-    <i class="fas fa-search"></i>
-  </button>
-</div>
-  
 <table class="table">
   <thead>
     <tr>

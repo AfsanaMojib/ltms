@@ -2,7 +2,10 @@
 @extends('website.webmaster')
 @section('main')
 
-
+<div id="banner">
+			<div class="container">
+			</div>
+		</div>
 
 <div id="main">
 
