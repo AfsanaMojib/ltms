@@ -33,7 +33,7 @@
                 </form>
             </div>
             <div class="card-footer">
-            <a class="btn btn-success float-right" href="#">Checkout</a>
+            <a class="btn btn-success float-right" href="{{ route('checkout') }}">Checkout</a>
             </div>
         </div>
     </div>

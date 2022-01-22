@@ -32,6 +32,16 @@ class CartController extends Controller
     {
         Cart::remove($rowId);
         return redirect()->back();
-
+    }
+    public function CheckoutPage()
+    {
+        $product_count = Cart::count();
+        $items = Cart::content();
+        $total = Cart::subtotal();
+        return view('website.pages.checkout', compact('items', 'product_count', 'total'));
+    }
+    public function CheckoutDone()
+    {
+        
     }
 }
