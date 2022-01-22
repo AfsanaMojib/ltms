@@ -14,8 +14,8 @@
                         <span class="text-black-50"></span><span> </span>
                     </div>
                 </div>
-                <form action="{{route('website.user.update.profile',auth()->user()->id)}}" method='post'>
-                    @method('PUT')
+                <form action="{{ route('website.user.update.profile') }}" method='POST'>
+                   
                     @csrf
                     <div class="border-right">
                         <div class="p-3 py-5">
@@ -27,13 +27,21 @@
                             <!-- <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div> -->
                             <!-- </div> -->
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Name</label><input type="name" class="form-control" placeholder="name" value=""></div>
-                                <div class="col-md-12"><label class="labels">Your Email</label><input type="email" class="form-control" placeholder="email" value=""></div>
-                                <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder="phone number" value=""></div>
-                                <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="address" value=""></div>
-                                <div class="col-md-12"><label class="labels">Password</label><input type="text" class="form-control" placeholder="password" value=""></div>
-                                <div class="col-md-12"><label class="labels">Confirm Password</label><input type="text" class="form-control" placeholder="confirm password" value=""></div>
-                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Update Profile</button></div>
+                                <div class="col-md-12">
+                                    <label class="labels">Name</label>
+                                    <input name="name" type="name" class="form-control" placeholder="name" value="{{ auth()->user()->name }}">
+                                </div>
+                                <div class="col-md-12"><label class="labels">Your Email</label>
+                                    <input name="email" type="email" class="form-control" placeholder="email" value="{{ auth()->user()->email }}">
+                                </div>
+                                <div class="col-md-12"><label class="labels">Phone Number</label>
+                                    <input name="phone_number" type="text" class="form-control" placeholder="phone number" value="{{ auth()->user()->phone_number }}">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Address</label>
+                                    <input name="address" type="text" class="form-control" placeholder="address" value="{{ auth()->user()->address }}">
+                                </div>
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Update Profile</button></div>
                             </div>
                         </div>
                     </div>
@@ -46,28 +54,28 @@
                             <p>Orders</p>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('admin.item')}}">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Order Details</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($orders as $order)
-                                        <tr>
-                                            <th scope="row">#{{$order->id}}</th>
-                                            <td>${{$order->amount}} for {{ $order->order_products_count }} Items</td>
-                                            <td>
-                                                <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </form>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Order Details</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($orders as $order)
+                                    <tr>
+                                        <th scope="row">#{{$order->id}}</th>
+                                        <td>${{$order->amount}} for {{ $order->order_products_count }} Items</td>
+                                        <td>
+                                            <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>

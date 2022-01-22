@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserprofileController extends Controller
@@ -14,16 +15,15 @@ class UserprofileController extends Controller
     return view('website.pages.user_profile', compact('orders'));
   }
 
-  public function userprofileupdate(Request $request, $id)
+  public function userprofileupdate(Request $request)
   {
-
-    $user = User::find($id);
-    $user->update([
-      'name' => $request->name,
-      'email' => $request->email,
-      'phone_number' => $request->phone_number,
-      'address' => $request->address,
+    // dd($request->all());
+    User::where('id',auth()->user()->id)->update([
+      'name'=>$request->name,
+      'email'=>$request->email,
+      'address'=>$request->address,
+      'phone_number'=>$request->phone_number,
     ]);
-    return redirect()->route('userprofile');
+    return redirect()->back();
   }
 }

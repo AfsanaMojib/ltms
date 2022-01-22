@@ -197,7 +197,8 @@ Route::group(['middleware' => 'auth'], function () {
     // user profile
     Route::get('/website/user/profile', [UserprofileController::class, 'userprofile'])->name('userprofile');
 
-    Route::get('/website/user/update/profile', [UserprofileController::class, 'userprofileupdate'])->name('website.user.update.profile');
+    Route::post('/website/user/update/profile', [UserprofileController::class, 'userprofileupdate'])
+        ->name('website.user.update.profile');
 
 
     Route::get('/checkout', [CartController::class, 'CheckoutPage'])->name('checkout');
