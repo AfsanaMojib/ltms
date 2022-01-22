@@ -23,10 +23,14 @@
 			<ul>
 				<li class="active"><a href="index.html">Homepage</a></li>
 				<li><a href="{{route('website.user.feedback')}}">User Feedback</a></li>
+				<li><a href="{{route('website.user.item')}}">Item</a></li>
+
+
+
 				@auth
 				<li>
-					<a href="#">
-						My account
+					<a href="{{route('userprofile')}}">
+						User Profile
 					</a>
 				</li>
 				<li>

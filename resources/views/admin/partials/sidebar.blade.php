@@ -16,6 +16,10 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 User
                             </a>
+                            <a class="nav-link" href="{{route('admin.chooseitem')}}">
+                                <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
+                                Choose Item
+                            </a>
                             <a class="nav-link" href="{{route('admin.item')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
                                Add Item
