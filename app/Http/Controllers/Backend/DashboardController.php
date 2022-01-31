@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Item;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
+
 
 class DashboardController extends Controller
 {
@@ -15,6 +19,12 @@ class DashboardController extends Controller
     {
         // dd(auth()->user()->role);
         if(auth()->user()->role =='user') { return redirect('/'); }
-        return view('admin.dashboard');
+
+        $count[ 'user']=User::all()->count();
+        $count['items']=Item::all()->count();
+        $count['feedback']=Feedback::all()->count();
+
+        return view('admin.dashboard',compact('count'));
     }
 }
+

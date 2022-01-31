@@ -17,14 +17,14 @@ class ShowUserController extends Controller
     }
 
     public function douserfeedback(Request $request){
-    
+
         feedback::create([
             'user_name'=>$request->user_name,
             'user_email'=>$request->user_email,
             'user_phone_number'=>$request->user_phone_number,
             'user_feedback'=>$request->user_feedback,
-            
+
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('msg','Thank You For Submitting Your Feedback');
     }
 }

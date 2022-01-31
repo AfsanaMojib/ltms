@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <form action="{{ route('website.user.update.profile') }}" method='POST'>
-                   
+
                     @csrf
                     <div class="border-right">
                         <div class="p-3 py-5">
@@ -60,16 +60,16 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Order Details</th>
-                                        <th scope="col">Action</th>
+                                        {{-- <th scope="col">Action</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($orders as $order)
                                     <tr>
                                         <th scope="row">#{{$order->id}}</th>
-                                        <td>${{$order->amount}} for {{ $order->order_products_count }} Items</td>
+                                        <td>TK{{$order->amount}} for {{ $order->order_products_count }} Items</td>
                                         <td>
-                                            <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a>
+                                            {{-- <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a> --}}
                                         </td>
                                     </tr>
                                     @endforeach
