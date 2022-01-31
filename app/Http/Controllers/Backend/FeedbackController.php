@@ -18,10 +18,26 @@ class FeedbackController extends Controller
             'user_email'=>$request->user_email,
             'user_phone_number'=>$request->user_phone_number,
             'user_feedback'=>$request->user_feedback,
-            
+
         ]);
         return redirect()->route('user.feedback');
     }
-        
-    
+
+    public function feedbackdetails($id)
+    {
+
+        //        collection= get(), all()====== read with loop (foreach)
+        //       object= first(), find(), findOrFail(),======direct
+        $feedback=Feedback::where('id', $id)->first();
+        //      $product=Product::where('id',$product_id)->first();
+        return view('admin.layouts.feedback_details', compact('feedback'));
+    }
+
+    public function feedbackdelete($id)
+    {
+        Feedback::find($id)->delete();
+        return redirect()->back()->with('success', 'Feedback Deleted');
+    }
+
+
 }

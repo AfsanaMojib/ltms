@@ -14,61 +14,65 @@
                             </a> -->
                             <a class="nav-link" href="{{route('admin.user')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
-                                User
+                                User List
                             </a>
                             <a class="nav-link" href="{{route('admin.chooseitem')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
-                                Choose Item
+                                Order List
                             </a>
                             <a class="nav-link" href="{{route('admin.item')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
-                               Add Item
+                               Manage Item
                             </a>
-                            <a class="nav-link" href="{{route('admin.plant.name')}}">
+                            <a class="nav-link" href="{{route('admin.report')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
-                                Plant 
+                               Report
                             </a>
-                            <a class="nav-link" href="{{route('admin.plant.type')}}">
+                            <!-- <a class="nav-link" href="#"> -->
+                                <!-- <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div> -->
+                                
+                            <!-- </a> -->
+                            <!-- <a class="nav-link" href="{{route('admin.plant.type')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
                                 Plant Type 
-                            </a>
+                            </a> -->
                            
                            
-                            <a class="nav-link" href="{{route('admin.plantingtool')}}">
+                            <!-- <a class="nav-link" href="{{route('admin.plantingtool')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></i></div>
                                 Planting Tool
-                            </a>
+                            </a> -->
 
                             
-                            <a class="nav-link" href="{{route('admin.soil_texture')}}">
+                            <!-- <a class="nav-link" href="{{route('admin.soil_texture')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Soil Texture
-                            </a>
-                            <a class="nav-link" href="{{route('admin.picture')}}">
+                            </a> -->
+                            <!-- <a class="nav-link" href="{{route('admin.picture')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Picture
-                            </a>
-                            <a class="nav-link" href="{{route('admin.pesticide.list')}}">
+                            </a> -->
+                            <!-- <a class="nav-link" href="{{route('admin.pesticide.list')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Pesticide
-                            </a>
-                            <a class="nav-link" href="{{route('admin.stock')}}">
+                            </a> -->
+                            <!-- <a class="nav-link" href="{{route('admin.stock')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Stock
-                            </a>
+                            </a> -->
                             
-                            <a class="nav-link" href="{{route('admin.payment.create')}}">
+                            <!-- <a class="nav-link" href="{{route('admin.payment.create')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Payment
-                            </a>
-                            <a class="nav-link" href="#">
+                            </a> -->
+                            <!-- <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Invoice
-                            </a>
-                            <a class="nav-link" href="#">
+                            </a> -->
+                            <!-- <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Report
-                            </a>
+                            </a> -->
                             <a class="nav-link" href="{{route('user.feedback')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Feedback

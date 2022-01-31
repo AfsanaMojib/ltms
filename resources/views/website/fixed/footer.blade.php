@@ -1,16 +1,17 @@
-<div id="footer">
+{{-- <div id="footer">
 			<div class="container">
 				<div class="row">
 					<div class="6u">
-						<section>
+						<section> --}}
+
 							<!-- <header>
 								<h2>Elementum facilisis</h2>
 							</header> -->
-							<a href="#" class="image full"><img src="images/pics05.jpg" alt=""></a>
+							{{-- <a href="#" class="image full"><img src="images/pics05.jpg" alt=""></a> --}}
 							<!-- <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p> -->
-						</section>
+						{{-- </section>
 					</div>
-					<div id="fbox1" class="3u">
+					<div id="fbox1" class="3u"> --}}
 						<!-- <section>
 							<header>
 								<h2>Praesent mattis</h2>
@@ -24,8 +25,8 @@
 								<li class="fa fa-angle-right"><a href="#">Sed quis odio sagittis leo vehicula</a></li>
 							</ul>
 						</section> -->
-					</div>
-					<div id="fbox2" class="3u">
+					{{-- </div>
+					<div id="fbox2" class="3u"> --}}
 						<!-- <section>
 							<header>
 								<h2>Maecenas luctus</h2>
@@ -41,7 +42,7 @@
 						</section> -->
 					</div>
 				</div>
-				
-				
+
+
 			</div>
 		</div>

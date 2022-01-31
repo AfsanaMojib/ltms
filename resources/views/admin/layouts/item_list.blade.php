@@ -3,6 +3,20 @@
 <h1>Item</h1>
 <a href="{{route('item.form')}}" class="btn btn-warning">Add Item</a>
 
+
+<form action="{{route('admin.item')}}">
+    <div class="input-group rounded mt-3 mb-2">
+      <div class="form-outline">
+        <input type="search" id="form1" class="form-control" name="search" placeholder="Search" arial-label="Search" aria-describedby="search-addon" />
+        <!-- <label class="form-label" for="form1">Search</label> -->
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+    </form>
+
 <form action="{{route('admin.item')}}">
 <table class="table">
   <thead>
@@ -10,9 +24,9 @@
       <th scope="col">Item Name</th>
       <th scope="col">Item Type</th>
       <th scope="col">Item Category</th>
-    
+
       <th scope="col">Price</th>
-     
+
       <th scope="col">Description</th>
       <th scope="col">Quantity</th>
       <th scope="col">Status</th>
@@ -27,9 +41,9 @@
       <th scope="row">{{$item->item_name}}</th>
       <td>{{$item->ItemType->item_name}}</td>
       <td>{{$item->category->name}}</td>
-      
+
       <td>{{$item->price}}</td>
-     
+
       <td>{{$item->description}}</td>
       <td>{{$item->quantity}}</td>
       <td>{{$item->status}}</td>
@@ -43,7 +57,7 @@
     </tr>
     @endforeach
 
-    
+
   </tbody>
 </table>
 @endsection

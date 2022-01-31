@@ -9,9 +9,9 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Plant </div>
+                                    <div class="card-body">User </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('admin.plant.name')}}">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{route('admin.user')}}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -19,9 +19,9 @@
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Plant Type</div>
+                                    <div class="card-body">Order List</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('admin.plant.type')}}">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{route('admin.chooseitem')}}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -29,9 +29,9 @@
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Planting Tool</div>
+                                    <div class="card-body">Add Item</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('admin.plantingtool')}}">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{route('admin.item')}}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -39,9 +39,9 @@
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">Soil Texture</div>
+                                    <div class="card-body">Feedback</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('admin.soil_texture')}}">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{route('user.feedback')}}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -49,9 +49,9 @@
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-secondary text-white mb-4">
-                                    <div class="card-body">Picture</div>
+                                    <div class="card-body">Report</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('admin.picture')}}">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                 
                             </div>
 
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Pesticide</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -69,9 +69,9 @@
                                 </div>
 
                                 
-                            </div>
+                            </div> -->
 
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Stock</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -81,9 +81,9 @@
                                 </div>
 
                                 
-                            </div>
+                            </div> -->
 
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-secondary text-white mb-4">
                                     <div class="card-body">Payment</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -91,9 +91,9 @@
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div> 
-                            </div>
+                            </div> -->
 
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-secondary text-white mb-4">
                                     <div class="card-body">Invoice</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -101,9 +101,9 @@
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div> 
-                            </div>
+                            </div> -->
 
-                            <div class="col-xl-3 col-md-6">
+                            <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-secondary text-white mb-4">
                                     <div class="card-body">Report</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -111,7 +111,7 @@
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div> 
-                            </div>
+                            </div> -->
 
                             
 

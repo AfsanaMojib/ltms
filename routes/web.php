@@ -24,6 +24,7 @@ use App\Http\Controllers\Frontend\UserprofileController;
 use App\Http\Controllers\Backend\ChooseitemController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Frontend\WebItemController;
+use App\Http\Controllers\Backend\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -144,6 +145,8 @@ Route::group(['prefix' => 'admin'], function () {
         // Feedback
         Route::get('/user/feedback/list', [FeedbackController::class, 'feedbacklist'])->name('user.feedback');
         Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
+        Route::get('/user/feedback/view/{id}', [FeedbackController::class, 'feedbackdetails'])->name('admin.feedback.details');
+        Route::get('/user/feedback/delete/{id}', [FeedbackController::class, 'feedbackdelete'])->name('admin.feedback.delete');
 
         // chooseitem
         Route::get('/user/chooseitem/list', [ChooseitemController::class, 'choosei'])->name('admin.chooseitem');
@@ -155,6 +158,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/planttype/store', [PlanttypeController::class, 'store'])->name('planttype.store');
         Route::get('planttype/view/{id}', [PlanttypeController::class, 'planttypedetails'])->name('admin.planttype.details');
         Route::get('planttype/delete/{id}', [PlanttypeController::class, 'planttypedelete'])->name('admin.planttype.delete');
+
+
+        // report
+        Route::get('/admin/report',[ReportController::class,'report'])->name('admin.report');
     });
 });
 

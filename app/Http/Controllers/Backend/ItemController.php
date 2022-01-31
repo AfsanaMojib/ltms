@@ -15,9 +15,9 @@ class ItemController extends Controller
     {
         $search = $request->query('search');
         if ($search) {
-            $item = Item::where('item_type', 'Like', '%' . $search . '%')
+            $items = Item::where('price', 'Like', '%' . $search . '%')
                 ->orWhere('item_name', 'like', '%' . $search . '%')->get();
-            return view('admin.layouts.plantname_list', compact('item'));
+            return view('admin.layouts.item_list', compact('items'));
         }
         $items = Item::with('ItemType', 'category')->get();
 
