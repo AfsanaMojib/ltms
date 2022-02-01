@@ -15,8 +15,8 @@ class CreateOrderProductsTable extends Migration
     {
         Schema::create('order_products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained();
-            $table->foreignId('item_id')->constrained();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->foreignId('item_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
             $table->integer('unit_price');
             $table->integer('discount')->nullable();
