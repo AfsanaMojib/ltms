@@ -25,6 +25,7 @@ use App\Http\Controllers\Backend\ChooseitemController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Frontend\WebItemController;
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -162,6 +163,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         // report
         Route::get('/admin/report',[ReportController::class,'report'])->name('admin.report');
+        Route::resource('/orders', OrderController::class);
     });
 });
 
@@ -197,6 +199,8 @@ Route::post('/website/choose/user/item', [WebItemController::class, 'douseritem'
 
 // Cart
 Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart');
+Route::get('/cart/increase/{id}/{qty}', [CartController::class, 'increase'])->name('cart.increase');
+Route::get('/cart/decrease/{id}/{qty}', [CartController::class, 'decrease'])->name('cart.decrease');
 Route::get('/cart/add/{id}', [CartController::class, 'AddtoCart'])->name('cart.add');
 Route::get('/cart/remove/{id}', [CartController::class, 'RemoveFromCart'])->name('cart.remove');
 Route::group(['middleware' => 'auth'], function () {

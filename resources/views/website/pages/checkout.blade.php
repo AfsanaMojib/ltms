@@ -17,8 +17,11 @@
 
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">{{ $item->name }}</h6>
-                            <small class="text-muted">Quantity : {{ $item->qty }}</small>
+                            <h6 class="my-0">{{ $item->name }}</h6>Quantity :
+                            <a href="{{ route('cart.decrease',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">-</a>
+                            <small class="text-muted">{{ $item->qty }}</small>
+                            <a href="{{ route('cart.increase',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">+</a>
+
                         </div>
                         <span class="text-muted">${{ $item->price }}</span>
                     </li>
@@ -28,7 +31,7 @@
                         <strong>Taka{{ $total }}</strong>
                     </li>
                 </ul>
-                <a  class="btn btn-primary btn-lg btn-block" href="{{ route('checkout.done') }}">Continue to checkout</a>
+                <a class="btn btn-primary btn-lg btn-block" href="{{ route('checkout.done') }}">Continue to checkout</a>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Billing address</h4>

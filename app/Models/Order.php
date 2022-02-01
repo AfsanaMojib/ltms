@@ -13,8 +13,16 @@ class Order extends Model
         'payment_method',
         'amount',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function OrderProducts()
     {
-        return $this->hasMany(OrderProduct::class,'order_id','id');
+        return $this->hasMany(OrderProduct::class, 'order_id', 'id');
+    }
+    public function getOrderDateAttribute()
+    {
+        return $this->created_at?->format('M d Y \,\a\t g:i A');
     }
 }
