@@ -16,7 +16,7 @@
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 User List
                             </a>
-                            <a class="nav-link" href="{{route('admin.chooseitem')}}">
+                            <a class="nav-link" href="{{route('orders.index')}}">
                                 <div class="sb-nav-link-icon"><i class='fas fa-caret-square-right' style='font-size:24px'></i></div>
                                 Order List
                             </a>

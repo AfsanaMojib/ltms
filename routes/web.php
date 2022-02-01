@@ -25,6 +25,7 @@ use App\Http\Controllers\Backend\ChooseitemController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Frontend\WebItemController;
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -162,6 +163,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         // report
         Route::get('/admin/report',[ReportController::class,'report'])->name('admin.report');
+        Route::resource('/orders', OrderController::class);
     });
 });
 
