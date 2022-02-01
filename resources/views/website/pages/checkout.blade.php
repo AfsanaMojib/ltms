@@ -20,7 +20,7 @@
                             <h6 class="my-0">{{ $item->name }}</h6>
                             <small class="text-muted">Quantity : {{ $item->qty }}</small>
                         </div>
-                        <span class="text-muted">${{ $item->price }}</span>
+                        <span class="text-muted">TK{{ $item->price }}</span>
                     </li>
                     @endforeach
                     <li class="list-group-item d-flex justify-content-between">
@@ -58,6 +58,7 @@
                         <div class="custom-control custom-radio">
                             <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
                             <label class="custom-control-label" for="credit">Cash On delivery</label>
+                            
                         </div>
                     </div>
 
