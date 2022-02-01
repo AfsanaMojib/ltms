@@ -64,4 +64,17 @@ class CartController extends Controller
         Cart::destroy();
         return redirect()->route('userprofile');
     }
+    public function increase($rowId,$qty)
+    {
+        // dd($rowId);
+       
+        Cart::update($rowId, $qty + 1);
+        return redirect()->back();
+        
+    }
+    public function decrease($rowId,$qty)
+    {
+        Cart::update($rowId, $qty - 1);
+        return redirect()->back();
+    }
 }

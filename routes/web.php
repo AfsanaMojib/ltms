@@ -199,6 +199,8 @@ Route::post('/website/choose/user/item', [WebItemController::class, 'douseritem'
 
 // Cart
 Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart');
+Route::get('/cart/increase/{id}/{qty}', [CartController::class, 'increase'])->name('cart.increase');
+Route::get('/cart/decrease/{id}/{qty}', [CartController::class, 'decrease'])->name('cart.decrease');
 Route::get('/cart/add/{id}', [CartController::class, 'AddtoCart'])->name('cart.add');
 Route::get('/cart/remove/{id}', [CartController::class, 'RemoveFromCart'])->name('cart.remove');
 Route::group(['middleware' => 'auth'], function () {

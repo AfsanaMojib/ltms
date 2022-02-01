@@ -21,11 +21,15 @@
                             @foreach($items as $item)
                             <tr>
                                 <th scope="row">{{$item->name}}</th>
-                            <td>{{$item->price}}</td>
-                            <td>{{$item->qty}}</td>
-                            <td>
-                                <a class="btn btn-warning" href="{{route('cart.remove',$item->rowId)}}">Remove from Cart</a>
-                            </td>
+                                <td>{{$item->price}}</td>
+                                <td>
+                                    <a href="{{ route('cart.decrease',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">-</a>
+                                    {{$item->qty}}
+                                    <a href="{{ route('cart.increase',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">+</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning" href="{{route('cart.remove',$item->rowId)}}">Remove from Cart</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -33,7 +37,7 @@
                 </form>
             </div>
             <div class="card-footer">
-            <a class="btn btn-success float-right" href="{{ route('checkout') }}">Checkout</a>
+                <a class="btn btn-success float-right" href="{{ route('checkout') }}">Checkout</a>
             </div>
         </div>
     </div>
