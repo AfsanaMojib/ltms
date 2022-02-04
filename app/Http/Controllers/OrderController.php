@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function __construct()
     {
-       
+
     }
     /**
      * Display a listing of the resource.
@@ -88,5 +88,15 @@ class OrderController extends Controller
     {
         $order->delete();
         return redirect()->back();
+    }
+    public function invoicedetails($id)
+    {
+
+
+
+        $orders = Order::where('id',$id)->first();
+
+
+        return view('admin.layouts.order_details',compact('orders'));
     }
 }

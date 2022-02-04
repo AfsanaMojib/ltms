@@ -8,9 +8,9 @@
 					<a href="#">Landscape Tree Management System</a>
 				</h1>
 				@auth
-				<span>Design by Afsana | {{ auth()->user()->name }}</span>
+				<span>User: {{ auth()->user()->name }}</span>
 				@else
-				<span>Design by Afsana</span>
+				{{-- <span>Design by Afsana</span> --}}
 				@endauth
 
 			</div>
@@ -46,7 +46,7 @@
 				<li><a href="{{route('register')}}">Registration</a></li>
 				<li><a href="{{ route('login') }}">Login</a></li>
 				@endauth
-				<li><a href="{{ route('cart') }}" 
+				<li><a href="{{ route('cart') }}"
 				style="display: flex;align-items: center;justify-content: center;">
 						<i class="fas fa-cart-plus"></i>
 						<x-cart-count/>

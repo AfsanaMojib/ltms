@@ -7,7 +7,11 @@
                 <p>Cart</p>
             </div>
             <div class="card-body">
-                <form action="{{route('admin.item')}}">
+
+
+
+
+            <form action="{{route('admin.item')}}">
                     <table class="table">
                         <thead>
                             <tr>
@@ -26,11 +30,14 @@
                                     <a href="{{ route('cart.decrease',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">-</a>
                                     {{$item->qty}}
                                     <a href="{{ route('cart.increase',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">+</a>
+                                    
                                 </td>
                                 <td>
                                     <a class="btn btn-warning" href="{{route('cart.remove',$item->rowId)}}">Remove from Cart</a>
                                 </td>
                             </tr>
+
+
                             @endforeach
                         </tbody>
                     </table>
@@ -42,4 +49,5 @@
         </div>
     </div>
 </div>
+
 @endsection

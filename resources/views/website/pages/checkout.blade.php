@@ -18,16 +18,16 @@
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">{{ $item->name }}</h6>Quantity :
-                            <a href="{{ route('cart.decrease',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">-</a>
+                            {{-- <a href="{{ route('cart.decrease',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">-</a> --}}
                             <small class="text-muted">{{ $item->qty }}</small>
-                            <a href="{{ route('cart.increase',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">+</a>
+                            {{-- <a href="{{ route('cart.increase',[$item->rowId,$item->qty]) }}" class="btn btn-secondary btn-sm">+</a> --}}
 
                         </div>
                         <span class="text-muted">TK{{ $item->price }}</span>
                     </li>
                     @endforeach
                     <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
+                        <span>Total</span>
                         <strong>Taka{{ $total }}</strong>
                     </li>
                 </ul>
@@ -57,11 +57,25 @@
 
                     <h4 class="mb-3">Payment</h4>
 
+
+
                     <div class="d-block my-3">
                         <div class="custom-control custom-radio">
                             <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
                             <label class="custom-control-label" for="credit">Cash On delivery</label>
-                            
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                            <label class="custom-control-label" for="credit">Bkash</label>
+
+
                         </div>
                     </div>
 

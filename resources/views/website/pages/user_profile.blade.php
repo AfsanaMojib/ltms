@@ -58,7 +58,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        {{-- <th scope="col">#</th> --}}
                                         <th scope="col">Order Details</th>
                                         {{-- <th scope="col">Action</th> --}}
                                     </tr>
@@ -66,8 +66,8 @@
                                 <tbody>
                                     @foreach($orders as $order)
                                     <tr>
-                                        <th scope="row">#{{$order->id}}</th>
-                                        <td>TK{{$order->amount}} for {{ $order->order_products_count }} Items</td>
+                                        {{-- <th scope="row">#{{$order->id}}</th> --}}
+                                        <td>TK{{$order->amount}} for {{ $order->order_products_count }}Types of Items</td>
                                         <td>
                                             {{-- <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a> --}}
                                         </td>

@@ -167,7 +167,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-
+// Order invoice
+Route::get('/admin/invoice/{id}',[OrderController::class,'invoicedetails'])->name('admin.invoice.details');
 
 //route for dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
@@ -214,4 +215,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/checkout', [CartController::class, 'CheckoutPage'])->name('checkout');
     Route::get('/checkout/ok', [CartController::class, 'CheckoutDone'])->name('checkout.done');
+
 });

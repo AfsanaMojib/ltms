@@ -15,12 +15,13 @@
         @foreach($orders as $order)
         <tr>
             <th scope="row">{{ $loop->iteration }}</th>
-            <td>TK{{$order->amount}} for {{ $order->OrderProducts->count() }} Items</td>
+            <td>TK{{$order->amount}} for {{ $order->OrderProducts->count() }} Type of Product</td>
             <td>{{ $order->user->name }}</td>
             <td>{{ $order->user->address }}</td>
             <td>{{ $order->order_date }}</td>
-            <td><a class="btn btn-info" href="#">View</a>
-                <a class="btn btn-info" href="#">Edit</a>
+            <td>
+                <a class="btn btn-warning" href="{{route('admin.invoice.details',$order->id)}}">View</a>
+                {{-- <a class="btn btn-info" href="#">Edit</a> --}}
                 <form action="{{ route('orders.destroy',$order) }}" onsubmit="return confirm('Are you sure to delete this Category ?');" method="POST">
                     @csrf
                     @method('DELETE')
