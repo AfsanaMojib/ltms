@@ -19,7 +19,7 @@ class Order extends Model
     }
     public function OrderProducts()
     {
-        return $this->hasMany(OrderProduct::class, 'order_id', 'id');
+        return $this->hasMany(OrderProduct::class);
     }
     public function getOrderDateAttribute()
     {

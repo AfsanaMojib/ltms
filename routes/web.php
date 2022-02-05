@@ -169,6 +169,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Order invoice
 Route::get('/admin/invoice/{id}',[OrderController::class,'invoicedetails'])->name('admin.invoice.details');
+Route::get('/user/invoice/{id}',[OrderController::class,'userinvoice'])->name('user.invoice.details');
 
 //route for dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

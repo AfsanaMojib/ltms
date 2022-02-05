@@ -15,7 +15,7 @@
         @foreach($orders as $order)
         <tr>
             <th scope="row">{{ $loop->iteration }}</th>
-            <td>TK{{$order->amount}} for {{ $order->OrderProducts->count() }} Type of Product</td>
+            <td>Total amount= TK{{$order->amount}} </td>
             <td>{{ $order->user->name }}</td>
             <td>{{ $order->user->address }}</td>
             <td>{{ $order->order_date }}</td>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Http\Request;
+use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -91,12 +92,24 @@ class OrderController extends Controller
     }
     public function invoicedetails($id)
     {
-
-
-
-        $orders = Order::where('id',$id)->first();
+        $orders = Order::with('OrderProducts')->find($id);
 
 
         return view('admin.layouts.order_details',compact('orders'));
+
+
     }
+    public function userinvoice($id)
+    {
+
+
+
+        // $orders = Order::where('id',$id)->first();
+
+        $orders = Order::with('OrderProducts')->find($id);
+        return view('website.pages.user_invoice',compact('orders'));
+
+
+    }
+
 }

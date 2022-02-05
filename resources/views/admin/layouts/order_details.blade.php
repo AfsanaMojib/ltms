@@ -124,10 +124,11 @@
         <div class="body-section">
             <div class="row">
                 <div class="col-6">
-                    <h2 class="heading">Invoice No.: 001</h2>
-                    {{-- <p class="sub-heading">Tracking No. fabcart2025 </p> --}}
-                    {{-- <p class="sub-heading">Order Date: {{$orders->order_date}} </p> --}}
+                    <h2 class="heading">Invoice No.: 00{{$orders->id}}</h2>
+                    {{-- <p class="sub-heading">Tracking No. fabcart2025 </p>
+                    <p class="sub-heading">Order Date: {{$orders->order_date}} </p> --}}
                     <p class="sub-heading">Email Address: {{ $orders->user->email}} </p>
+                    <p> <h2>Total Amount:{{$orders->amount}}.BDT</h2></p>
                 </div>
                 <div class="col-6">
                     <p class="sub-heading">Full Name: {{ $orders->user->name}}  </p>
@@ -143,64 +144,28 @@
 
             <br>
 
-            <p>Amount:TK{{$orders->amount}} for {{ $orders->OrderProducts->count() }} Type of Products</p>
-            {{-- <table class="table-bordered">
+            <table class="table">
                 <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th class="w-20">Price</th>
-                        <th class="w-20">Quantity</th>
-                        <th class="w-20">Total</th>
-                    </tr>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                  </tr>
                 </thead>
-                <tbody> --}}
+                <tbody>
 
-                    {{-- @foreach($items as $item)
-
+                    @foreach ($orders->OrderProducts as $order)
                     <tr>
-                      <th scope="row">{{$item->item_name}}</th>
-                      <td>{{$item->ItemType->item_name}}</td>
-                      <td>{{$item->category->name}}</td>
-
-                      <td>{{$item->price}}</td>
-
-
-                      <td>{{$item->quantity}}</td>
-
-                    </tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{$order->item->item_name}}</td>
+                        <td>{{$order->quantity}}</td>
+                        <td>{{$order->item->price}}.BDT</td>
+                      </tr>
                     @endforeach
- --}}
 
-                    {{-- @foreach($orders->invoicedetails as $order)
-                                <tr>
-                                    <td class="col-md-9">{{ $order->items->item_name}}</td>
-                                    <td class="col-md-3">{{ $order->items->price}}</td>
-                                    <td class="col-md-3">{{ $order->items->quantity}}</td>
-
-
-                                </tr>
-
-                            @endforeach --}}
-                    {{-- <tr>
-                        <td>Product Name</td>
-                        <td>10</td>
-                        <td>1</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-right">Sub Total</td>
-                        <td> 10.XX</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-right">Tax Total %1X</td>
-                        <td> 2</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-right">Grand Total</td>
-                        <td> 12.XX</td>
-                    </tr> --}}
                 </tbody>
-            </table>
+              </table>
             <br>
             <h3 class="heading">Payment Status: Unpaid</h3>
             <h3 class="heading">Payment Mode: Cash on Delivery</h3>
@@ -228,7 +193,7 @@
         var divToPrint = document.getElementById('divToPrint');
         var popupWin = window.open('', '_blank', 'width=1100,height=700');
         popupWin.document.open();
-        popupWin.document.write('<html><head><link href="http://localhost/ltms-app/public/css/style.css" rel="stylesheet"></head><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+        popupWin.document.write('<zhtml><head><link href="http://localhost/ltms-app/public/css/style.css" rel="stylesheet"></head><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
         popupWin.document.close();
     }
 </script>

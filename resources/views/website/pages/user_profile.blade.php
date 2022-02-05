@@ -51,7 +51,7 @@
                 <div class="mt-5">
                     <div class="card mt-5">
                         <div class="card-header">
-                            <p>Orders</p>
+                            <p>My Orders</p>
                         </div>
                         <div class="card-body">
 
@@ -64,15 +64,39 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($orders as $order)
-                                    <tr>
-                                        {{-- <th scope="row">#{{$order->id}}</th> --}}
+                                    {{-- @foreach($orders as $order)
+                                    <tr> --}}
+                                        {{-- <th scope="row">#{{$order->id}}</th>
                                         <td>TK{{$order->amount}} for {{ $order->order_products_count }}Types of Items</td>
                                         <td>
-                                            {{-- <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a> --}}
+                                            <a class="btn btn-success" href="{{route('cart.remove',$order->id)}}">View</a>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    @endforeach --}}
+
+
+                                    @foreach($orders as $order)
+        <tr>
+            <th scope="row">{{ $loop->iteration }}</th>
+            <td>TK{{$order->amount}} for {{ $order->OrderProducts->count() }} Type of Product</td>
+            <td>{{ $order->user->name }}</td>
+            <td>{{ $order->user->address }}</td>
+            <td>{{ $order->order_date }}</td>
+            <td>
+                <a class="btn btn-warning" href="{{route('user.invoice.details',$order->id)}}">View</a>
+                {{-- <a class="btn btn-info" href="#">Edit</a> --}}
+                <form action="{{ route('orders.destroy',$order) }}" onsubmit="return confirm('Are you sure to delete this Category ?');" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">
+                        Delete
+                    </button>
+                </form>
+
+            </td>
+        </tr>
+        @endforeach
+
                                 </tbody>
                             </table>
 
