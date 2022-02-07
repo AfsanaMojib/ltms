@@ -152,7 +152,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Item Name</th>
                             <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Price Per Unit</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -160,9 +160,9 @@
                             @foreach ($orders->OrderProducts as $order)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{$order->item->item_name}}</td>
-                                <td>{{$order->quantity}}</td>
-                                <td>{{$order->item->price}}.BDT</td>
+                                <th>{{$order->item->item_name}}</th>
+                                <th>{{$order->quantity}}</th>
+                                <th>{{$order->item->price}}.BDT</th>
                               </tr>
                             @endforeach
 

@@ -44,7 +44,7 @@ class CartController extends Controller
     }
     public function CheckoutDone(Request $request)
     {
-        
+
         DB::transaction(function () {
             $items = Cart::content();
             $order = Order::create([
@@ -60,6 +60,7 @@ class CartController extends Controller
                     'unit_price' => $item->price,
                 ]);
             }
+            
         });
         Cart::destroy();
         return redirect()->route('userprofile');
@@ -67,10 +68,10 @@ class CartController extends Controller
     public function increase($rowId,$qty)
     {
         // dd($rowId);
-       
+
         Cart::update($rowId, $qty + 1);
         return redirect()->back();
-        
+
     }
     public function decrease($rowId,$qty)
     {

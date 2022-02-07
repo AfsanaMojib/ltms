@@ -147,17 +147,17 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
+                    <td scope="col">#</td>
+                    <td scope="col">Item Name</td>
+                    <td scope="col">Quantity</td>
+                    <td scope="col">Price Per Unit</td>
                   </tr>
                 </thead>
                 <tbody>
 
                     @foreach ($orders->OrderProducts as $order)
                     <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{$order->item->item_name}}</td>
                         <td>{{$order->quantity}}</td>
                         <td>{{$order->item->price}}.BDT</td>
